@@ -5,7 +5,7 @@ import {BaseLayout} from "@components/layout";
 export default function Course() {
 
     return (
-        <BaseLayout>
+        <>
             <div className="py-4">
                 <CourseHero/>
             </div>
@@ -14,6 +14,8 @@ export default function Course() {
                 <Curriculum/>
             </div>
             <Modal/>
-        </BaseLayout>
+        </>
     );
 }
+
+Course.Layout = BaseLayout;
