@@ -7,8 +7,7 @@ export default function Home({courses}) {
     return (
         <>
             <Hero/>
-            <CourseList/>
-            {JSON.stringify(courses)}
+            <CourseList courses={courses}/>
         </>
     );
 }
