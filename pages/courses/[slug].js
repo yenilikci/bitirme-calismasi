@@ -14,7 +14,9 @@ export default function Course({course}) {
                     image={course.coverImage}
                 />
             </div>
-            <Keypoints/>
+            <Keypoints
+                points={course.wsl}
+            />
             <div className="py-4">
                 <Curriculum/>
             </div>
