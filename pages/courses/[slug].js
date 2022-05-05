@@ -18,7 +18,9 @@ export default function Course({course}) {
                 points={course.wsl}
             />
             <div className="py-4">
-                <Curriculum/>
+                <Curriculum
+                    locked={true}
+                />
             </div>
             <Modal/>
         </>
