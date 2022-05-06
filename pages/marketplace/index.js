@@ -16,6 +16,10 @@ export default function Marketplace({courses}) {
                     address={account.data}
                     network={network.data}
                 />
+                "Current" {`${network.data}`}
+                "Target" {`${network.target}`}
+                "Is Supported" {`${network.isSupported}`} <br/>
+                {process.env.NEXT_PUBLIC_TARGET_CHAIN_ID}
             </div>
             <CourseList
                 courses={courses}
@@ -40,4 +44,4 @@ export function getStaticProps() {
     }
 }
 
-Marketplace.Layout = BaseLayout;
+Marketplace.Layout = BaseLayout
