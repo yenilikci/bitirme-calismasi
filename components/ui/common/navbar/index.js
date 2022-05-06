@@ -3,7 +3,9 @@ import {useWeb3} from "@components/providers";
 import {Button} from "@components/ui/common";
 
 export default function Navbar() {
-    const {connect, isLoading, isWeb3Loaded} = useWeb3();
+    const {connect, isLoading, isWeb3Loaded, hooks} = useWeb3();
+    const {account} = hooks.useAccount();
+
 
     return (
         <section>
@@ -58,7 +60,7 @@ export default function Navbar() {
                                         </Button> :
                                         <Button
                                             onClick={() =>
-                                                window.open("https://metamask.io/download.html","_blank")}
+                                                window.open("https://metamask.io/download.html", "_blank<")}
                                             className="text-white bg-lime-600 hover:bg-lime-700"
                                         >
                                             Install Metamask
