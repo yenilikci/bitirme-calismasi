@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import {useWeb3} from "@components/providers";
+import {Button} from "@components/ui/common";
 
 export default function Navbar() {
-    const {connect, isWeb3Loaded} = useWeb3();
+    const {connect, isLoading, isWeb3Loaded} = useWeb3();
 
     return (
         <section>
@@ -42,19 +43,24 @@ export default function Navbar() {
                                 </a>
                             </Link>
                             {
-                                isWeb3Loaded ?
-                                    <span
+                                isLoading ?
+                                    <Button
                                         onClick={connect}
-                                        className="px-8 py-3 border rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                                     >
-                                    Connect Wallet
-                            </span> :
-                                    <span
-                                        onClick={connect}
-                                        className="px-8 py-3 border rounded-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-                                    >
-                                    Install Metamask
-                            </span>
+                                        Loading...
+                                    </Button> :
+                                    isWeb3Loaded ?
+                                        <Button
+                                            onClick={connect}
+                                        >
+                                            Connect Wallet
+                                        </Button> :
+                                        <Button
+                                            onClick={connect}
+                                            className="text-white bg-lime-600 hover:bg-lime-700"
+                                        >
+                                            Install Metamask
+                                        </Button>
                             }
                         </div>
                     </div>
