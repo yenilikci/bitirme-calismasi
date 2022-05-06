@@ -1,7 +1,7 @@
 import {CourseCard, CourseList} from "@components/ui/course"
 import {BaseLayout} from "@components/ui/layout"
 import {getAllCourses} from "@content/courses/fetcher"
-import {Walletbar} from "@components/ui/web3"
+import {WalletBar} from "@components/ui/web3"
 import {useAccount} from "@components/hooks/web3/useAccount"
 import {useNetwork} from "@components/hooks/web3/useNetwork"
 
@@ -12,9 +12,13 @@ export default function Marketplace({courses}) {
     return (
         <>
             <div className="py-4">
-                <Walletbar
+                <WalletBar
                     address={account.data}
-                    network={network.data}
+                    network={{
+                        data: network.data,
+                        target: network.target,
+                        isSupported: network.isSupported
+                    }}
                 />
             </div>
             <CourseList
@@ -40,4 +44,4 @@ export function getStaticProps() {
     }
 }
 
-Marketplace.Layout = BaseLayout
+Marketplace.Layout = BaseLayout;
