@@ -1,4 +1,4 @@
-export default function Walletbar({address}) {
+export default function Walletbar({address, network}) {
     return (
         <section className="text-white bg-indigo-600">
             <div className="p-8">
@@ -23,7 +23,7 @@ export default function Walletbar({address}) {
                         <div>
                             <span>Currently on </span>
                             <strong className="text-2xl">
-                                Ethereum Main Network
+                                {network}
                             </strong>
                         </div>
                     </div>
