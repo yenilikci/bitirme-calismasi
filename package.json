@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@metamask/detect-provider": "^1.2.0",
     "next": "12.1.5",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-dom": "18.0.0",
+    "web3": "^1.7.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",
