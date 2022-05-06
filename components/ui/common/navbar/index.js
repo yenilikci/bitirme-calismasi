@@ -13,6 +13,7 @@ export default function Navbar() {
             <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
                 <nav className="relative" aria-label="Global">
                     <div className="flex justify-between items-center">
+                        {account}
                         <div>
                             <Link href="/">
                                 <a
