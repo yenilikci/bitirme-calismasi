@@ -42,7 +42,7 @@ export default function Web3Provider({children}) {
         return {
             ...web3Api,
             hooks: setupHooks(web3),
-            getHooks: () => setupHooks(web3),
+            getHooks: () => setupHooks(web3, provider),
             isWeb3Loaded: web3 != null,
             connect: provider ?
                 async () => {
