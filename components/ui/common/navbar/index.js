@@ -13,7 +13,6 @@ export default function Navbar() {
             <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
                 <nav className="relative" aria-label="Global">
                     <div className="flex justify-between items-center">
-                        {account}
                         <div>
                             <Link href="/">
                                 <a
@@ -55,11 +54,18 @@ export default function Navbar() {
                                         Loading...
                                     </Button> :
                                     isWeb3Loaded ?
-                                        <Button
-                                            onClick={connect}
-                                        >
-                                            Connect Wallet
-                                        </Button> :
+                                        account ?
+                                            <Button
+                                                hoverable={false}
+                                                className="cursor-default"
+                                            >
+                                                Hi there
+                                            </Button> :
+                                            <Button
+                                                onClick={connect}
+                                            >
+                                                Connect Wallet
+                                            </Button> :
                                         <Button
                                             onClick={() =>
                                                 window.open("https://metamask.io/download.html", "_blank<")}
