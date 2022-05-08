@@ -21,8 +21,8 @@ export const useAccount = () => {
     }
 }
 
-export const useWalletInfo = (useAccount1 = useAccount()) => {
-    const {account} = useAccount1
+export const useWalletInfo = () => {
+    const {account} = useAccount()
     const {network} = useNetwork()
 
     return {
