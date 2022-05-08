@@ -1,19 +1,18 @@
-import {useEffect, useMemo, useState} from "react";
+const {createContext, useContext, useEffect, useState, useMemo} = require("react");
+
 import detectEthereumProvider from "@metamask/detect-provider";
 import Web3 from "web3";
-import {setupHooks} from "@components/providers/web3/hooks/setupHooks";
+import {setupHooks} from "./hooks/setupHooks";
 
-const {createContext, useContext} = require("react");
-
-
-const Web3Context = createContext(null);
+const Web3Context = createContext(null)
 
 export default function Web3Provider({children}) {
     const [web3Api, setWeb3Api] = useState({
         provider: null,
         web3: null,
         contract: null,
-        isLoading: true
+        isLoading: true,
+        hooks: setupHooks()
     })
 
     useEffect(() => {
@@ -26,7 +25,8 @@ export default function Web3Provider({children}) {
                     provider,
                     web3,
                     contract: null,
-                    isLoading: false
+                    isLoading: false,
+                    hooks: setupHooks(web3, provider)
                 })
             } else {
                 setWeb3Api(api => ({...api, isLoading: false}))
@@ -38,11 +38,9 @@ export default function Web3Provider({children}) {
     }, [])
 
     const _web3Api = useMemo(() => {
-        const {web3, provider} = web3Api;
+        const {web3, provider} = web3Api
         return {
             ...web3Api,
-            hooks: setupHooks(web3),
-            getHooks: () => setupHooks(web3, provider),
             isWeb3Loaded: web3 != null,
             connect: provider ?
                 async () => {
@@ -64,10 +62,10 @@ export default function Web3Provider({children}) {
 }
 
 export function useWeb3() {
-    return useContext(Web3Context);
+    return useContext(Web3Context)
 }
 
 export function useHooks(cb) {
-    const {getHooks} = useWeb3();
-    return cb(getHooks())
+    const {hooks} = useWeb3()
+    return cb(hooks)
 }
