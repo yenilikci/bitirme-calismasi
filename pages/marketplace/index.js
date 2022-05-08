@@ -1,18 +1,20 @@
-import {CourseCard, CourseList} from "@components/ui/course"
-import {BaseLayout} from "@components/ui/layout"
-import {getAllCourses} from "@content/courses/fetcher"
-import {EthRates, WalletBar} from "@components/ui/web3"
-import {useAccount, useNetwork} from "@components/hooks/web3"
-import {Button} from "@components/ui/common"
-import {OrderModal} from "@components/ui/order"
-import {useState} from "react"
-import {useEthPrice} from "@components/hooks/useEthPrice"
+
+
+import { CourseCard, CourseList } from "@components/ui/course"
+import { BaseLayout } from "@components/ui/layout"
+import { getAllCourses } from "@content/courses/fetcher"
+import { EthRates, WalletBar } from "@components/ui/web3"
+import { useAccount, useNetwork } from "@components/hooks/web3"
+import { Button } from "@components/ui/common"
+import { OrderModal } from "@components/ui/order"
+import { useState } from "react"
+import { useEthPrice } from "@components/hooks/useEthPrice"
 
 export default function Marketplace({courses}) {
     const [selectedCourse, setSelectedCourse] = useState(null)
-    const {account} = useAccount()
-    const {network} = useNetwork()
-    const {eth} = useEthPrice()
+    const { account } = useAccount()
+    const { network } = useNetwork()
+    const { eth, perItem } = useEthPrice()
 
     return (
         <>
@@ -28,6 +30,7 @@ export default function Marketplace({courses}) {
                 />
                 <EthRates
                     eth={eth.data}
+                    ethPerItem={eth.perItem}
                 />
             </div>
             <CourseList
@@ -49,7 +52,7 @@ export default function Marketplace({courses}) {
                     />
                 }
             </CourseList>
-            {selectedCourse &&
+            { selectedCourse &&
             <OrderModal
                 course={selectedCourse}
                 onClose={() => setSelectedCourse(null)}
@@ -60,7 +63,7 @@ export default function Marketplace({courses}) {
 }
 
 export function getStaticProps() {
-    const {data} = getAllCourses()
+    const { data } = getAllCourses()
     return {
         props: {
             courses: data
