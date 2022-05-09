@@ -1,4 +1,5 @@
 import {useEthPrice} from "@components/hooks/useEthPrice"
+import {Loader} from "@components/ui/common"
 import Image from "next/image"
 
 export default function EthRates() {
@@ -9,15 +10,20 @@ export default function EthRates() {
             <div className="flex flex-1 items-stretch text-center">
                 <div className="p-10 border drop-shadow rounded-md">
                     <div className="flex items-center">
-                        <Image
-                            layout="fixed"
-                            height="35"
-                            width="35"
-                            src="/small-eth.webp"
-                        />
-                        <span className="text-2xl font-bold">
-               = {eth.data}$
-            </span>
+                        {true ?
+                            <Loader/> :
+                            <>
+                                <Image
+                                    layout="fixed"
+                                    height="35"
+                                    width="35"
+                                    src="/small-eth.webp"
+                                />
+                                <span className="text-2xl font-bold">
+                = {eth.data}$
+              </span>
+                            </>
+                        }
                     </div>
                     <p className="text-xl text-gray-500">Current eth Price</p>
                 </div>
@@ -43,4 +49,4 @@ export default function EthRates() {
             </div>
         </div>
     )
-};
+}
