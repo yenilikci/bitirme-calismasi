@@ -53,4 +53,12 @@ contract CourseMarketplace {
     {
         return totalOwnedCourses;
     }
+
+    function getCourseHashAtIndex(uint index)
+    external
+    view
+    returns (bytes32)
+    {
+        return ownedCourseHash[index];
+    }
 }
