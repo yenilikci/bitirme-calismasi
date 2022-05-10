@@ -45,4 +45,12 @@ contract CourseMarketplace {
         state : State.Purchased
         });
     }
+
+    function getCourseCount()
+    external
+    view
+    returns (uint)
+    {
+        return totalOwnedCourses;
+    }
 }
