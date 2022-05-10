@@ -1,9 +1,12 @@
-import {handler as createUseAccountHook} from "./useAccount";
-import {handler as createUseNetworkHook} from "./useNetwork";
+import { handler as createAccountHook } from "./useAccount"
+import { handler as createNetworkHook } from "./useNetwork"
+import { handler as createOwnedCoursesHook } from "./useOwnedCourses"
 
-export const setupHooks = (...deps) => {
+
+export const setupHooks = ({ web3, provider, contract }) => {
     return {
-        useAccount: createUseAccountHook(...deps),
-        useNetwork: createUseNetworkHook(...deps)
+        useAccount: createAccountHook(web3, provider),
+        useNetwork: createNetworkHook(web3, provider),
+        useOwnedCourses: createOwnedCoursesHook(web3, contract)
     }
 }

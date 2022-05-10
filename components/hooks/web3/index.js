@@ -1,4 +1,4 @@
-import {useHooks} from "@components/providers/web3"
+import { useHooks } from "@components/providers/web3"
 
 const enhanceHook = swrRes => {
     return {
@@ -21,13 +21,21 @@ export const useAccount = () => {
     }
 }
 
+export const useOwnedCourses = () => {
+    const res = useHooks(hooks => hooks.useOwnedCourses)()
+
+    return {
+        ownedCourses: { data: res }
+    }
+}
+
 export const useWalletInfo = () => {
-    const {account} = useAccount()
-    const {network} = useNetwork()
+    const { account } = useAccount()
+    const { network } = useNetwork()
 
     return {
         account,
         network,
         canPurchaseCourse: !!(account.data && network.isSupported)
     }
-};
+}
