@@ -14,3 +14,4 @@ export default function BaseLayout({children}) {
         </Web3Provider>
     )
 }
+
