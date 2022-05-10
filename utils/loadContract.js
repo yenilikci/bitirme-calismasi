@@ -4,7 +4,6 @@ export const loadContract = async (name, web3) => {
     const res = await fetch(`/contracts/${name}.json`)
     const Artifact = await res.json()
     let contract = null
-    console.log(Artifact)
     try {
         contract = new web3.eth.Contract(
             Artifact.abi,
