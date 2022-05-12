@@ -1,4 +1,3 @@
-
 import { CourseCard, CourseList } from "@components/ui/course"
 import { BaseLayout } from "@components/ui/layout"
 import { getAllCourses } from "@content/courses/fetcher"
@@ -9,7 +8,7 @@ import { useState } from "react"
 import { MarketHeader } from "@components/ui/marketplace"
 import { useWeb3 } from "@components/providers"
 
-export default function Marketplace({courses}) {
+export default function Marketplace({ courses }) {
     const { web3, contract } = useWeb3()
     const { canPurchaseCourse, account } = useWalletInfo()
     const [selectedCourse, setSelectedCourse] = useState(null)
@@ -32,7 +31,7 @@ export default function Marketplace({courses}) {
             const result = await contract.methods.purchaseCourse(
                 hexCourseId,
                 proof
-            ).send({from: account.data, value})
+            ).send({ from: account.data, value })
             console.log(result)
         } catch {
             console.error("Purchase course: Operation has failed.")
@@ -41,9 +40,7 @@ export default function Marketplace({courses}) {
 
     return (
         <>
-            <div className="py-4">
-                <MarketHeader />
-            </div>
+            <MarketHeader />
             <CourseList
                 courses={courses}
             >
@@ -65,12 +62,12 @@ export default function Marketplace({courses}) {
                     />
                 }
             </CourseList>
-            { selectedCourse &&
-            <OrderModal
-                course={selectedCourse}
-                onSubmit={purchaseCourse}
-                onClose={() => setSelectedCourse(null)}
-            />
+            {selectedCourse &&
+                <OrderModal
+                    course={selectedCourse}
+                    onSubmit={purchaseCourse}
+                    onClose={() => setSelectedCourse(null)}
+                />
             }
         </>
     )
@@ -85,4 +82,4 @@ export function getStaticProps() {
     }
 }
 
-Marketplace.Layout = BaseLayout;
+Marketplace.Layout = BaseLayout

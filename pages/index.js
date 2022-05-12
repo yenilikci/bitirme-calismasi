@@ -1,12 +1,12 @@
-import {Hero} from "@components/ui/common"
-import {CourseCard, CourseList} from "@components/ui/course"
-import {BaseLayout} from "@components/ui/layout"
-import {getAllCourses} from "@content/courses/fetcher"
+import { Hero } from "@components/ui/common"
+import { CourseCard, CourseList } from "@components/ui/course"
+import { BaseLayout } from "@components/ui/layout"
+import { getAllCourses } from "@content/courses/fetcher"
 
-export default function Home({courses}) {
+export default function Home({ courses }) {
     return (
         <>
-            <Hero/>
+            <Hero />
             <CourseList
                 courses={courses}
             >
@@ -22,7 +22,7 @@ export default function Home({courses}) {
 }
 
 export function getStaticProps() {
-    const {data} = getAllCourses()
+    const { data } = getAllCourses()
     return {
         props: {
             courses: data
