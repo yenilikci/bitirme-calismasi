@@ -5,6 +5,7 @@ const adminAddresses = {
     "0xcf9201674645e205581d5dc064f5f70902c47b93a32838a78129519820b3041f": true
 }
 
+
 export const handler = (web3, provider) => () => {
 
     const {data, mutate, ...rest} = useSWR(() =>
@@ -22,10 +23,16 @@ export const handler = (web3, provider) => () => {
     )
 
     useEffect(() => {
+        console.log("SUBSCRIBING TO EVENT")
         provider &&
         provider.on("accountsChanged",
-            accounts => mutate(accounts[0] ?? null)
+            accounts => {
+                console.log("ON ACCOUNT DATA")
+                mutate(accounts[0] ?? null)
+            }
         )
+
+        console.log(provider)
     }, [provider])
 
     return {
