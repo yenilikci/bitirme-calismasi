@@ -1,4 +1,4 @@
-import {useHooks} from "@components/providers/web3"
+import { useHooks } from "@components/providers/web3"
 
 
 const _isEmpty = data => {
@@ -12,7 +12,7 @@ const _isEmpty = data => {
 
 
 const enhanceHook = swrRes => {
-    const {data, error} = swrRes
+    const { data, error } = swrRes
     const hasInitialResponse = !!(data || error)
     const isEmpty = hasInitialResponse && _isEmpty(data)
 
@@ -35,6 +35,24 @@ export const useAccount = () => {
     return {
         account: swrRes
     }
+}
+
+export const useAdmin = ({ redirectTo }) => {
+    const { account } = useAccount()
+    const { requireInstall } = useWeb3()
+    const router = useRouter()
+
+    useEffect(() => {
+        if ((
+            requireInstall ||
+            account.hasInitialResponse && !account.isAdmin) ||
+            account.isEmpty) {
+
+            router.push(redirectTo)
+        }
+    }, [account])
+
+    return { account }
 }
 
 export const useOwnedCourses = (...args) => {
@@ -62,8 +80,8 @@ export const useManagedCourses = (...args) => {
 }
 
 export const useWalletInfo = () => {
-    const {account} = useAccount()
-    const {network} = useNetwork()
+    const { account } = useAccount()
+    const { network } = useNetwork()
 
     return {
         account,
