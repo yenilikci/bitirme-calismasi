@@ -1,5 +1,7 @@
 import { useHooks } from "@components/providers/web3"
-
+import { useEffect } from "react"
+import { useWeb3 } from "@components/providers"
+import { useRouter } from "next/router"
 
 const _isEmpty = data => {
     return (
