@@ -103,6 +103,12 @@ contract CourseMarketplace {
         owner = payable(newOwner);
     }
 
+    function isCourseCreated(bytes32 courseHash) private view returns (bool) {
+        return
+            ownedCourses[courseHash].owner !=
+            0x0000000000000000000000000000000000000000;
+    }
+
     function hasCourseOwnership(bytes32 courseHash)
         private
         view
