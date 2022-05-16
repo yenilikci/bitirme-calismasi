@@ -2,7 +2,6 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 contract CourseMarketplace {
-
     enum State {
         Purchased,
         Activated,
@@ -10,8 +9,8 @@ contract CourseMarketplace {
     }
 
     struct Course {
-        uint id; // 32
-        uint price; // 32
+        uint256 id; // 32
+        uint256 price; // 32
         bytes32 proof; // 32
         address owner; // 20
         State state; // 1
@@ -21,10 +20,10 @@ contract CourseMarketplace {
     mapping(bytes32 => Course) private ownedCourses;
 
     // mapping of courseID to courseHash
-    mapping(uint => bytes32) private ownedCourseHash;
+    mapping(uint256 => bytes32) private ownedCourseHash;
 
     // number of all courses + id of the course
-    uint private totalOwnedCourses;
+    uint256 private totalOwnedCourses;
 
     address payable private owner;
 
@@ -48,64 +47,55 @@ contract CourseMarketplace {
     function purchaseCourse(
         bytes16 courseId, // 0x00000000000000000000000000003130
         bytes32 proof // 0x0000000000000000000000000000313000000000000000000000000000003130
-    )
-    external
-    payable
-    {
+    ) external payable {
         bytes32 courseHash = keccak256(abi.encodePacked(courseId, msg.sender));
 
         if (hasCourseOwnership(courseHash)) {
             revert CourseHasOwner();
         }
 
-        uint id = totalOwnedCourses++;
+        uint256 id = totalOwnedCourses++;
 
         ownedCourseHash[id] = courseHash;
         ownedCourses[courseHash] = Course({
-        id : id,
-        price : msg.value,
-        proof : proof,
-        owner : msg.sender,
-        state : State.Purchased
+            id: id,
+            price: msg.value,
+            proof: proof,
+            owner: msg.sender,
+            state: State.Purchased
         });
     }
 
-    function transferOwnership(address newOwner)
-    external
-    onlyOwner
-    {
+    function activateCourse(bytes32 courseHash) external onlyOwner {
+        Course storage course = ownedCourses[courseHash];
+        course.state = State.Activated;
+    }
+
+    function transferOwnership(address newOwner) external onlyOwner {
         setContractOwner(newOwner);
     }
 
-    function getCourseCount()
-    external
-    view
-    returns (uint)
-    {
+    function getCourseCount() external view returns (uint256) {
         return totalOwnedCourses;
     }
 
-    function getCourseHashAtIndex(uint index)
-    external
-    view
-    returns (bytes32)
+    function getCourseHashAtIndex(uint256 index)
+        external
+        view
+        returns (bytes32)
     {
         return ownedCourseHash[index];
     }
 
     function getCourseByHash(bytes32 courseHash)
-    external
-    view
-    returns (Course memory)
+        external
+        view
+        returns (Course memory)
     {
         return ownedCourses[courseHash];
     }
 
-    function getContractOwner()
-    public
-    view
-    returns (address)
-    {
+    function getContractOwner() public view returns (address) {
         return owner;
     }
 
@@ -114,9 +104,9 @@ contract CourseMarketplace {
     }
 
     function hasCourseOwnership(bytes32 courseHash)
-    private
-    view
-    returns (bool)
+        private
+        view
+        returns (bool)
     {
         return ownedCourses[courseHash].owner == msg.sender;
     }
