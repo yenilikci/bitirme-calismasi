@@ -31,6 +31,12 @@ contract CourseMarketplace {
         setContractOwner(msg.sender);
     }
 
+    /// Course has invalid state!
+    error InvalidState();
+
+    /// Course is not created!
+    error CourseIsNotCreated();
+
     /// Course has already a Owner!
     error CourseHasOwner();
 
@@ -67,7 +73,16 @@ contract CourseMarketplace {
     }
 
     function activateCourse(bytes32 courseHash) external onlyOwner {
+        if (!isCourseCreated(courseHash)) {
+            revert CourseIsNotCreated();
+        }
+
         Course storage course = ownedCourses[courseHash];
+
+        if (course.state != State.Purchased) {
+            revert InvalidState();
+        }
+
         course.state = State.Activated;
     }
 
