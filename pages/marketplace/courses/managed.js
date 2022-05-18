@@ -1,13 +1,13 @@
-import { useAdmin, useManagedCourses } from "@components/hooks/web3";
-import { useWeb3 } from "@components/providers";
-import { Button, Message } from "@components/ui/common";
-import { CourseFilter, ManagedCourseCard } from "@components/ui/course";
-import { BaseLayout } from "@components/ui/layout";
-import { MarketHeader } from "@components/ui/marketplace";
-import { useState } from "react";
+import {useAdmin, useManagedCourses} from "@components/hooks/web3";
+import {useWeb3} from "@components/providers";
+import {Button, Message} from "@components/ui/common";
+import {CourseFilter, ManagedCourseCard} from "@components/ui/course";
+import {BaseLayout} from "@components/ui/layout";
+import {MarketHeader} from "@components/ui/marketplace";
+import {useState} from "react";
 
 const VerificationInput = ({onVerify}) => {
-    const [ email, setEmail ] = useState("")
+    const [email, setEmail] = useState("")
 
     return (
         <div className="flex mr-2 relative rounded-md">
@@ -73,16 +73,26 @@ export default function ManagedCourses() {
         changeCourseState(courseHash, "deactivateCourse")
     }
 
+    const searchCourse = courseHash => {
+        if (!courseHash) {
+            return
+        }
+
+        alert(courseHash)
+    }
+
     if (!account.isAdmin) {
         return null
     }
 
     return (
         <>
-            <MarketHeader />
-            <CourseFilter />
+            <MarketHeader/>
+            <CourseFilter
+                onSearchSubmit={searchCourse}
+            />
             <section className="grid grid-cols-1">
-                { managedCourses.data?.map(course =>
+                {managedCourses.data?.map(course =>
                     <ManagedCourseCard
                         key={course.ownedCourseId}
                         course={course}
