@@ -8,6 +8,10 @@ contract("CourseMarketplace", accounts => {
 
     const courseId = "0x00000000000000000000000000003130"
     const proof = "0x0000000000000000000000000000313000000000000000000000000000003130"
+
+    const courseId2 = "0x00000000000000000000000000002130"
+    const proof2 = "0x0000000000000000000000000000213000000000000000000000000000002130"
+
     const value = "900000000"
 
     let _contract = null
@@ -64,11 +68,11 @@ contract("CourseMarketplace", accounts => {
     describe("Activate the purchased course", () => {
 
         it("should NOT be able to activate course by NOT contract owner", async () => {
-            await catchRevert(_contract.activateCourse(courseHash, { from: buyer }))
+            await catchRevert(_contract.activateCourse(courseHash, {from: buyer}))
         })
 
         it("should have 'activated' state", async () => {
-            await _contract.activateCourse(courseHash, { from: contractOwner })
+            await _contract.activateCourse(courseHash, {from: contractOwner})
             const course = await _contract.getCourseByHash(courseHash)
             const exptectedState = 1
 
@@ -93,19 +97,48 @@ contract("CourseMarketplace", accounts => {
         })
 
         it("should NOT transfer ownership when contract owner is not sending TX", async () => {
-            await catchRevert(_contract.transferOwnership(accounts[3], { from: accounts[4] }))
+            await catchRevert(_contract.transferOwnership(accounts[3], {from: accounts[4]}))
         })
 
         it("should transfer owership to 3rd address from 'accounts'", async () => {
-            await _contract.transferOwnership(accounts[2], { from: currentOwner })
+            await _contract.transferOwnership(accounts[2], {from: currentOwner})
             const owner = await _contract.getContractOwner()
             assert.equal(owner, accounts[2], "Contract owner is not the second account")
         })
 
         it("should transfer owership back to initial contract owner'", async () => {
-            await _contract.transferOwnership(contractOwner, { from: accounts[2] })
+            await _contract.transferOwnership(contractOwner, {from: accounts[2]})
             const owner = await _contract.getContractOwner()
             assert.equal(owner, contractOwner, "Contract owner is not set!")
         })
     })
+
+    describe("Deactivate course", () => {
+        let courseHash2 = null
+
+        before(async () => {
+            await _contract.purchaseCourse(courseId2, proof2, {from: buyer, value})
+            courseHash2 = await _contract.getCourseHashAtIndex(1)
+        })
+
+        it("should NOT be able to deactivate the course by NOT contract owner", async () => {
+            await catchRevert(_contract.deactivateCourse(courseHash2, {from: buyer}))
+        })
+
+        it("should have status of deactivated and price 0", async () => {
+            await _contract.deactivateCourse(courseHash2, {from: contractOwner})
+            const course = await _contract.getCourseByHash(courseHash2)
+            const exptectedState = 2
+            const exptectedPrice = 0
+
+            assert.equal(course.state, exptectedState, "Course is NOT deactivated!")
+            assert.equal(course.price, exptectedPrice, "Course price is not 0!")
+        })
+
+        it("should NOT be able activate deactivated course", async () => {
+            await catchRevert(_contract.activateCourse(courseHash2, {from: contractOwner}))
+        })
+
+    })
+
 })
