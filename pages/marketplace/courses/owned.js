@@ -19,7 +19,7 @@ export default function OwnedCourses({courses}) {
                 {ownedCourses.isEmpty &&
                 <div className="w-1/2">
                     <Message type="warning">
-                        <div>You don't own any courses</div>
+                        <div>You dont own any courses</div>
                         <Link href="/marketplace">
                             <a className="font-normal hover:underline">
                                 <i>Purchase Course</i>
