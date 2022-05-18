@@ -5,7 +5,7 @@ import {CourseFilter, ManagedCourseCard} from "@components/ui/course";
 import {BaseLayout} from "@components/ui/layout";
 import {MarketHeader} from "@components/ui/marketplace";
 import {normalizeOwnedCourse} from "@utils/normalize";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const VerificationInput = ({onVerify}) => {
     const [email, setEmail] = useState("")
@@ -32,17 +32,18 @@ const VerificationInput = ({onVerify}) => {
 }
 
 export default function ManagedCourses() {
-    const [ proofedOwnership, setProofedOwnership ] = useState({})
-    const [ searchedCourse, setSearchedCourse ] = useState(null)
-    const { web3, contract } = useWeb3()
-    const { account } = useAdmin({redirectTo: "/marketplace"})
-    const { managedCourses } = useManagedCourses(account)
+    const [proofedOwnership, setProofedOwnership] = useState({})
+    const [searchedCourse, setSearchedCourse] = useState(null)
+    const [filters, setFilters] = useState({state: "all"})
+    const {web3, contract} = useWeb3()
+    const {account} = useAdmin({redirectTo: "/marketplace"})
+    const {managedCourses} = useManagedCourses(account)
 
     const verifyCourse = (email, {hash, proof}) => {
         const emailHash = web3.utils.sha3(email)
         const proofToCheck = web3.utils.soliditySha3(
-            { type: "bytes32", value: emailHash },
-            { type: "bytes32", value: hash }
+            {type: "bytes32", value: emailHash},
+            {type: "bytes32", value: hash}
         )
 
         proofToCheck === proof ?
@@ -138,6 +139,10 @@ export default function ManagedCourses() {
         )
     }
 
+    useEffect(() => {
+        console.log(filters)
+    }, [filters])
+
     if (!account.isAdmin) {
         return null
     }
@@ -146,6 +151,7 @@ export default function ManagedCourses() {
         <>
             <MarketHeader/>
             <CourseFilter
+                onFilterSelect={(value) => setFilters({state: value})}
                 onSearchSubmit={searchCourse}
             />
             <section className="grid grid-cols-1">
