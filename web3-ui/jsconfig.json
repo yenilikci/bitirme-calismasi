@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "..",
+    "paths": {
+      "@pages/*": ["web3-ui/pages/*"],
+      "@components/*": ["web3-ui/components/*"],
+      "@styles/*": ["web3-ui/styles/*"],
+      "@content/*": ["web3-ui/content/*"],
+      "@utils/*": ["web3-ui/utils/*"]
+    }
+  }
+}
