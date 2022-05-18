@@ -96,9 +96,6 @@ export default function Marketplace({courses}) {
     return (
         <>
             <MarketHeader/>
-            <Button onClick={notify}>
-                Notify!
-            </Button>
             <CourseList
                 courses={courses}
             >
