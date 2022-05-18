@@ -1,12 +1,11 @@
 const express = require("express");
+const helmet = require("helmet");
+const config = require("./config");
+config();
 const app = express();
+app.use(express.json());
+app.use(helmet);
 
-app.get("/", (req, res) => {
-    res.status(200).send({
-        message: "REST API ayakta..."
-    });
-});
-
-app.listen(5001, () => {
-    console.log("5001 portu üzerinden çalışıyor.");
+app.listen(process.env.APP_PORT, () => {
+    console.log("Server is running on port " + process.env.APP_PORT);
 });
