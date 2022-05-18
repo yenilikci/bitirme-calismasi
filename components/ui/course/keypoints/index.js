@@ -1,7 +1,7 @@
 export default function Keypoints({points}) {
     return (
         <section>
-            <div className="py-12 bg-white">
+            <div className="py-6 rounded bg-white dark:bg-gray-700 my-4">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="mt-10">
                         <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
@@ -26,11 +26,11 @@ export default function Keypoints({points}) {
                                                 />
                                             </svg>
                                         </div>
-                                        <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
+                                        <p className="ml-16 text-lg leading-6 font-medium text-gray-900 dark:text-slate-200">
                                             Keypoint {i + 1}
                                         </p>
                                     </dt>
-                                    <dd className="mt-2 ml-16 text-base text-gray-500">
+                                    <dd className="mt-2 ml-16 text-base text-gray-500 dark:text-slate-300">
                                         {point}
                                     </dd>
                                 </div>

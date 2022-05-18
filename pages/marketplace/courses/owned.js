@@ -34,6 +34,7 @@ export default function OwnedCourses({courses}) {
                         course={course}
                     >
                         <Button
+                            className="bg-red-500 text-white border-white dark:border-gray-500 shadow"
                             onClick={() => router.push(`/courses/${course.slug}`)}
                         >
                             Watch the course

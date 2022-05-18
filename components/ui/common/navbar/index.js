@@ -7,8 +7,13 @@ import {useTheme} from "next-themes";
 import {MoonIcon, SunIcon} from "@heroicons/react/outline";
 import {FaRegMoon, FaRegSun} from "react-icons/fa";
 import {useEffect, useState} from "react";
+import {BsMoon, BsSun} from "react-icons/bs";
+import {FiMoon, FiSun} from "react-icons/fi";
 
 export default function Navbar() {
+
+
+
     const { connect, isLoading, requireInstall } = useWeb3()
     const { account } = useAccount()
     const { pathname } = useRouter()
@@ -29,13 +34,13 @@ export default function Navbar() {
 
         if(currentTheme ==="dark"){
             return (
-                <FaRegSun className="w-8 h-8 text-yellow-500 inline mx-3" role="button" onClick={() => setTheme('light')} />
+                <FiSun className="w-8 h-8 text-yellow-500 inline mx-3" role="button" onClick={() => setTheme('light')}/>
             )
         }
 
         else {
             return (
-                <FaRegMoon className="w-8 h-8 text-gray-900 inline mx-3" role="button" onClick={() => setTheme('dark')} />
+                <FiMoon className="w-8 h-8 text-gray-900 inline mx-3" role="button" onClick={() => setTheme('dark')} />
             )
         }
     };
@@ -66,12 +71,6 @@ export default function Navbar() {
                             </ActiveLink>
                         </div>
                         <div className="text-center">
-                            <ActiveLink href="/wishlist" >
-                                <a
-                                    className="font-medium sm:mr-8 mr-1 text-gray-500 hover:text-gray-900">
-                                    Wishlist
-                                </a>
-                            </ActiveLink>
                             {renderThemeChanger()}
                             { isLoading ?
                                 <Button
@@ -82,7 +81,7 @@ export default function Navbar() {
                                 account.data ?
                                     <Button
                                         hoverable={false}
-                                        className="cursor-default dark:bg-green-900">
+                                        className="cursor-default dark:bg-indigo-900">
                                         Hi there {account.isAdmin && "Admin"}
                                     </Button> :
                                     requireInstall ?

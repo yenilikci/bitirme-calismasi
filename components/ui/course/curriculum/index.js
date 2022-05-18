@@ -14,7 +14,7 @@ export default function Curriculum({locked, courseState, isLoading}) {
 
     const statusClass = "px-2 inline-flex text-xs leading-5 font-semibold rounded-full"
     return (
-        <section className="max-w-5xl mx-auto">
+        <section className="max-w-5xl mx-auto my-5">
             <div className="flex flex-col">
                 <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -22,24 +22,24 @@ export default function Curriculum({locked, courseState, isLoading}) {
                             <table className="min-w-full divide-y divide-gray-200">
                                 <thead className="bg-gray-50">
                                 <tr>
-                                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-slate-200 dark:bg-gray-700 uppercase tracking-wider">
                                         Section 1
                                     </th>
-                                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-slate-200 dark:bg-gray-700 uppercase tracking-wider">
                                         Status
                                     </th>
-                                    <th scope="col" className="relative px-6 py-3">
+                                    <th scope="col" className="relative px-6 py-3 dark:bg-gray-700">
                                         <span className="sr-only">Edit</span>
                                     </th>
                                 </tr>
                                 </thead>
-                                <tbody className="bg-white divide-y divide-gray-200">
+                                <tbody className="bg-white divide-y divide-gray-200 dark:bg-gray-700 dark:text-slate-200">
                                 { lectures.map(lec =>
                                         <tr key={lec}>
-                                            <td className="px-6 py-4 whitespace-nowrap">
+                                            <td className="px-6 py-4 whitespace-nowrap ">
                                                 <div className="flex items-center">
                                                     <div className="ml-4">
-                                                        <div className="text-sm font-medium text-gray-900">
+                                                        <div className="text-sm font-medium text-gray-900 dark:text-slate-200">
                                                             {lec}
                                                         </div>
                                                     </div>
@@ -56,7 +56,7 @@ export default function Curriculum({locked, courseState, isLoading}) {
                           { locked ? "Locked" : "Unlocked" }
                         </span>
                                             </td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium dark:bg-gray-700 dark:text-slate-200">
                                                 {
                                                     isLoading ?
                                                         <Loader/> :
