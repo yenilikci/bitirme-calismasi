@@ -1,24 +1,24 @@
-import { CourseCard, CourseList } from "@components/ui/course"
-import { BaseLayout } from "@components/ui/layout"
-import { getAllCourses } from "@content/courses/fetcher"
-import { useOwnedCourses, useWalletInfo } from "@components/hooks/web3"
-import { Button, Loader, Message } from "@components/ui/common"
-import { OrderModal } from "@components/ui/order"
-import { useState } from "react"
-import { MarketHeader } from "@components/ui/marketplace"
-import { useWeb3 } from "@components/providers"
+import {CourseCard, CourseList} from "@components/ui/course"
+import {BaseLayout} from "@components/ui/layout"
+import {getAllCourses} from "@content/courses/fetcher"
+import {useOwnedCourses, useWalletInfo} from "@components/hooks/web3"
+import {Button, Loader, Message} from "@components/ui/common"
+import {OrderModal} from "@components/ui/order"
+import {useState} from "react"
+import {MarketHeader} from "@components/ui/marketplace"
+import {useWeb3} from "@components/providers"
 
 export default function Marketplace({courses}) {
-    const { web3, contract, requireInstall } = useWeb3()
-    const { hasConnectedWallet, isConnecting, account } = useWalletInfo()
-    const { ownedCourses } = useOwnedCourses(courses, account.data)
+    const {web3, contract, requireInstall} = useWeb3()
+    const {hasConnectedWallet, isConnecting, account} = useWalletInfo()
+    const {ownedCourses} = useOwnedCourses(courses, account.data)
     const [selectedCourse, setSelectedCourse] = useState(null)
 
     const purchaseCourse = async order => {
         const hexCourseId = web3.utils.utf8ToHex(selectedCourse.id)
         const orderHash = web3.utils.soliditySha3(
-            { type: "bytes16", value: hexCourseId },
-            { type: "address", value: account.data }
+            {type: "bytes16", value: hexCourseId},
+            {type: "address", value: account.data}
         )
         const emailHash = web3.utils.sha3(order.email)
         const proof = web3.utils.soliditySha3(
@@ -82,24 +82,34 @@ export default function Marketplace({courses}) {
                             if (owned) {
                                 return (
                                     <>
-                                        <Button
-                                            disabled={true}
-                                            variant="green">
-                                            Owned
-                                        </Button>
+                                        <div>
+                                            <Button
+                                                disabled={true}
+                                                variant="green">
+                                                Owned
+                                            </Button>
+                                            {owned.state === "deactivated" &&
+                                            <Button
+                                                disabled={false}
+                                                onClick={() => alert("Re-activating")}
+                                                variant="purple">
+                                                Fund to Activate
+                                            </Button>
+                                            }
+                                        </div>
                                         <div className="mt-1">
-                                            { owned.state === "activated" &&
+                                            {owned.state === "activated" &&
                                             <Message size="sm">
                                                 Activated
                                             </Message>
                                             }
-                                            { owned.state === "deactivated" &&
+                                            {owned.state === "deactivated" &&
                                             <Message type="danger" size="sm">
                                                 Deactivated
                                             </Message>
                                             }
-                                            { owned.state === "purchased" &&
-                                            <Message type="info" size="sm">
+                                            {owned.state === "purchased" &&
+                                            <Message type="warning" size="sm">
                                                 Waiting for Activation
                                             </Message>
                                             }
