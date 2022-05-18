@@ -1,5 +1,5 @@
 const CourseMarketplace = artifacts.require("CourseMarketplace")
-const {catchRevert} = require("./utils/exceptions")
+const { catchRevert } = require("./utils/exceptions")
 
 // Mocha - testing framework
 // Chai - assertion JS library
@@ -170,8 +170,12 @@ contract("CourseMarketplace", accounts => {
 
         it("should be able repurchase with the original buyer", async () => {
             const beforeTxBuyerBalance = await getBalance(buyer)
+            const beforeTxContractBalance = await getBalance(_contract.address)
+
             const result = await _contract.repurchaseCourse(courseHash2, {from: buyer, value})
+
             const afterTxBuyerBalance = await getBalance(buyer)
+            const afterTxContractBalance = await getBalance(_contract.address)
 
             const course = await _contract.getCourseByHash(courseHash2)
             const exptectedState = 0
@@ -184,6 +188,12 @@ contract("CourseMarketplace", accounts => {
                 toBN(beforeTxBuyerBalance).sub(toBN(value)).sub(gas).toString(),
                 afterTxBuyerBalance,
                 "Client balance is not correct!"
+            )
+
+            assert.equal(
+                toBN(beforeTxContractBalance).add(toBN(value)).toString(),
+                afterTxContractBalance,
+                "Contract balance is not correct!"
             )
         })
 
