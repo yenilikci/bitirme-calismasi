@@ -18,9 +18,12 @@
     "web3": "^1.7.3"
   },
   "devDependencies": {
+    "@truffle/hdwallet-provider": "^2.0.8",
     "autoprefixer": "^10.4.4",
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.5",
+    "i": "^0.3.7",
+    "npm": "^8.10.0",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.24"
   }
