@@ -2,6 +2,7 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 contract CourseMarketplace {
+
     enum State {
         Purchased,
         Activated,
@@ -9,8 +10,8 @@ contract CourseMarketplace {
     }
 
     struct Course {
-        uint256 id; // 32
-        uint256 price; // 32
+        uint id; // 32
+        uint price; // 32
         bytes32 proof; // 32
         address owner; // 20
         State state; // 1
@@ -20,10 +21,10 @@ contract CourseMarketplace {
     mapping(bytes32 => Course) private ownedCourses;
 
     // mapping of courseID to courseHash
-    mapping(uint256 => bytes32) private ownedCourseHash;
+    mapping(uint => bytes32) private ownedCourseHash;
 
     // number of all courses + id of the course
-    uint256 private totalOwnedCourses;
+    uint private totalOwnedCourses;
 
     address payable private owner;
 
@@ -53,26 +54,32 @@ contract CourseMarketplace {
     function purchaseCourse(
         bytes16 courseId, // 0x00000000000000000000000000003130
         bytes32 proof // 0x0000000000000000000000000000313000000000000000000000000000003130
-    ) external payable {
+    )
+    external
+    payable
+    {
         bytes32 courseHash = keccak256(abi.encodePacked(courseId, msg.sender));
 
         if (hasCourseOwnership(courseHash)) {
             revert CourseHasOwner();
         }
 
-        uint256 id = totalOwnedCourses++;
+        uint id = totalOwnedCourses++;
 
         ownedCourseHash[id] = courseHash;
         ownedCourses[courseHash] = Course({
-            id: id,
-            price: msg.value,
-            proof: proof,
-            owner: msg.sender,
-            state: State.Purchased
+        id : id,
+        price : msg.value,
+        proof : proof,
+        owner : msg.sender,
+        state : State.Purchased
         });
     }
 
-    function activateCourse(bytes32 courseHash) external onlyOwner {
+    function activateCourse(bytes32 courseHash)
+    external
+    onlyOwner
+    {
         if (!isCourseCreated(courseHash)) {
             revert CourseIsNotCreated();
         }
@@ -86,31 +93,63 @@ contract CourseMarketplace {
         course.state = State.Activated;
     }
 
-    function transferOwnership(address newOwner) external onlyOwner {
+    function deactivateCourse(bytes32 courseHash)
+    external
+    onlyOwner
+    {
+        if (!isCourseCreated(courseHash)) {
+            revert CourseIsNotCreated();
+        }
+
+        Course storage course = ownedCourses[courseHash];
+
+        if (course.state != State.Purchased) {
+            revert InvalidState();
+        }
+
+        (bool success,) = course.owner.call{value : course.price}("");
+        require(success, "Transfer failed!");
+
+        course.state = State.Deactivated;
+        course.price = 0;
+    }
+
+    function transferOwnership(address newOwner)
+    external
+    onlyOwner
+    {
         setContractOwner(newOwner);
     }
 
-    function getCourseCount() external view returns (uint256) {
+    function getCourseCount()
+    external
+    view
+    returns (uint)
+    {
         return totalOwnedCourses;
     }
 
-    function getCourseHashAtIndex(uint256 index)
-        external
-        view
-        returns (bytes32)
+    function getCourseHashAtIndex(uint index)
+    external
+    view
+    returns (bytes32)
     {
         return ownedCourseHash[index];
     }
 
     function getCourseByHash(bytes32 courseHash)
-        external
-        view
-        returns (Course memory)
+    external
+    view
+    returns (Course memory)
     {
         return ownedCourses[courseHash];
     }
 
-    function getContractOwner() public view returns (address) {
+    function getContractOwner()
+    public
+    view
+    returns (address)
+    {
         return owner;
     }
 
@@ -118,16 +157,18 @@ contract CourseMarketplace {
         owner = payable(newOwner);
     }
 
-    function isCourseCreated(bytes32 courseHash) private view returns (bool) {
-        return
-            ownedCourses[courseHash].owner !=
-            0x0000000000000000000000000000000000000000;
+    function isCourseCreated(bytes32 courseHash)
+    private
+    view
+    returns (bool)
+    {
+        return ownedCourses[courseHash].owner != 0x0000000000000000000000000000000000000000;
     }
 
     function hasCourseOwnership(bytes32 courseHash)
-        private
-        view
-        returns (bool)
+    private
+    view
+    returns (bool)
     {
         return ownedCourses[courseHash].owner == msg.sender;
     }
