@@ -1,13 +1,14 @@
-import {useAdmin, useManagedCourses} from "@components/hooks/web3";
-import {useWeb3} from "@components/providers";
-import {Button, Message} from "@components/ui/common";
-import {CourseFilter, ManagedCourseCard} from "@components/ui/course";
-import {BaseLayout} from "@components/ui/layout";
-import {MarketHeader} from "@components/ui/marketplace";
-import {useState} from "react";
+import { useAdmin, useManagedCourses } from "@components/hooks/web3";
+import { useWeb3 } from "@components/providers";
+import { Button, Message } from "@components/ui/common";
+import { CourseFilter, ManagedCourseCard } from "@components/ui/course";
+import { BaseLayout } from "@components/ui/layout";
+import { MarketHeader } from "@components/ui/marketplace";
+import { normalizeOwnedCourse } from "@utils/normalize";
+import { useEffect, useState } from "react";
 
 const VerificationInput = ({onVerify}) => {
-    const [email, setEmail] = useState("")
+    const [ email, setEmail ] = useState("")
 
     return (
         <div className="flex mr-2 relative rounded-md">
@@ -32,6 +33,7 @@ const VerificationInput = ({onVerify}) => {
 
 export default function ManagedCourses() {
     const [ proofedOwnership, setProofedOwnership ] = useState({})
+    const [ searchedCourse, setSearchedCourse ] = useState(null)
     const { web3, contract } = useWeb3()
     const { account } = useAdmin({redirectTo: "/marketplace"})
     const { managedCourses } = useManagedCourses(account)
@@ -73,12 +75,20 @@ export default function ManagedCourses() {
         changeCourseState(courseHash, "deactivateCourse")
     }
 
-    const searchCourse = courseHash => {
-        if (!courseHash) {
-            return
+    const searchCourse = async hash => {
+        const re = /[0-9A-Fa-f]{6}/g;
+
+        if(hash && hash.length === 66 && re.test(hash)) {
+            const course = await contract.methods.getCourseByHash(hash).call()
+
+            if (course.owner !== "0x0000000000000000000000000000000000000000") {
+                const normalized = normalizeOwnedCourse(web3)({hash}, course)
+                setSearchedCourse(normalized)
+                return
+            }
         }
 
-        alert(courseHash)
+        setSearchedCourse(null)
     }
 
     if (!account.isAdmin) {
@@ -87,12 +97,12 @@ export default function ManagedCourses() {
 
     return (
         <>
-            <MarketHeader/>
+            <MarketHeader />
             <CourseFilter
                 onSearchSubmit={searchCourse}
             />
             <section className="grid grid-cols-1">
-                {managedCourses.data?.map(course =>
+                { managedCourses.data?.map(course =>
                     <ManagedCourseCard
                         key={course.ownedCourseId}
                         course={course}
