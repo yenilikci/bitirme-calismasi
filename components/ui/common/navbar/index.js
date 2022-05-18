@@ -3,11 +3,42 @@ import Link from "next/link"
 import { ActiveLink, Button } from "@components/ui/common"
 import { useAccount } from "@components/hooks/web3"
 import { useRouter } from "next/router"
+import {useTheme} from "next-themes";
+import {MoonIcon, SunIcon} from "@heroicons/react/outline";
+import {FaRegMoon, FaRegSun} from "react-icons/fa";
+import {useEffect, useState} from "react";
 
 export default function Navbar() {
     const { connect, isLoading, requireInstall } = useWeb3()
     const { account } = useAccount()
     const { pathname } = useRouter()
+
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() =>{
+        setMounted(true);
+    },[])
+
+
+    const {systemTheme , theme, setTheme} = useTheme();
+
+    const renderThemeChanger= () => {
+        if(!mounted) return null;
+
+        const currentTheme = theme === "system" ? systemTheme : theme ;
+
+        if(currentTheme ==="dark"){
+            return (
+                <FaRegSun className="w-8 h-8 text-yellow-500 inline mx-3" role="button" onClick={() => setTheme('light')} />
+            )
+        }
+
+        else {
+            return (
+                <FaRegMoon className="w-8 h-8 text-gray-900 inline mx-3" role="button" onClick={() => setTheme('dark')} />
+            )
+        }
+    };
 
     return (
         <section>
@@ -41,6 +72,7 @@ export default function Navbar() {
                                     Wishlist
                                 </a>
                             </ActiveLink>
+                            {renderThemeChanger()}
                             { isLoading ?
                                 <Button
                                     disabled={true}
@@ -50,7 +82,7 @@ export default function Navbar() {
                                 account.data ?
                                     <Button
                                         hoverable={false}
-                                        className="cursor-default">
+                                        className="cursor-default dark:bg-green-900">
                                         Hi there {account.isAdmin && "Admin"}
                                     </Button> :
                                     requireInstall ?
@@ -63,6 +95,7 @@ export default function Navbar() {
                                             Connect
                                         </Button>
                             }
+
                         </div>
                     </div>
                 </nav>
