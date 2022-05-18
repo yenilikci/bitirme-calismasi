@@ -48,19 +48,19 @@ export default function Navbar() {
                         <div>
                             <ActiveLink href="/" >
                                 <a
-                                    className="font-medium mr-8 text-gray-500 hover:text-gray-900">
+                                    className="font-medium text-xl mr-8 text-gray-500 hover:text-gray-900">
                                     Home
                                 </a>
                             </ActiveLink>
                             <ActiveLink href="/marketplace" >
                                 <a
-                                    className="font-medium mr-8 text-gray-500 hover:text-gray-900">
+                                    className="font-medium text-xl mr-8 text-gray-500 hover:text-gray-900">
                                     Marketplace
                                 </a>
                             </ActiveLink>
                             <ActiveLink href="/blogs" >
                                 <a
-                                    className="font-medium mr-8 text-gray-500 hover:text-gray-900">
+                                    className="font-medium text-xl mr-8 text-gray-500 hover:text-gray-900">
                                     Blogs
                                 </a>
                             </ActiveLink>
