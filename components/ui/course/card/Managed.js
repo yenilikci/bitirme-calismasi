@@ -1,7 +1,7 @@
 const Item = ({title, value, className}) => {
 
     return (
-        <div className={`${className} px-4 py-5  sm:px-6`}>
+        <div className={`${className} px-4 py-2 sm:px-6`}>
             <div className="text-sm font-medium text-gray-500">
                 {title}
             </div>
@@ -18,7 +18,7 @@ export default function ManagedCourseCard({children, course}) {
     return (
         <div className="bg-white border shadow overflow-hidden sm:rounded-lg mb-3">
             <div className="border-t border-gray-200">
-                {Object.keys(course).map((key, i) =>
+                { Object.keys(course).map((key, i) =>
                     <Item
                         key={key}
                         className={`${i % 2 ? "bg-gray-50" : "bg-white"}`}
