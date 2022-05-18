@@ -7,7 +7,7 @@ export default function EthRates() {
 
     return (
         <div className="flex flex-col xs:flex-row text-center">
-            <div className="p-6 border drop-shadow rounded-md mr-2">
+            <div className="p-6 border drop-shadow rounded-md mr-2 dark:bg-gray-700">
                 <div className="flex items-center justify-center">
                     {eth.data ?
                         <>
@@ -26,9 +26,9 @@ export default function EthRates() {
                         </div>
                     }
                 </div>
-                <p className="text-lg text-gray-500">Current eth Price</p>
+                <p className="text-lg text-gray-500 dark:text-slate-300">Current eth Price</p>
             </div>
-            <div className="p-6 border drop-shadow rounded-md">
+            <div className="p-6 border drop-shadow rounded-md dark:bg-gray-700">
                 <div className="flex items-center justify-center">
                     {eth.data ?
                         <>
@@ -50,7 +50,7 @@ export default function EthRates() {
                         </div>
                     }
                 </div>
-                <p className="text-lg text-gray-500">Price per course</p>
+                <p className="text-lg text-gray-500 dark:text-slate-300">Price per course</p>
             </div>
         </div>
     )

@@ -18,10 +18,10 @@ export default function Header() {
     const { account } = useAccount()
     return (
         <>
-            <div className="pt-4">
+            <div className="pt-4 pb-4">
                 <WalletBar />
             </div>
-            <EthRates />
+            <EthRates/>
             <div className="flex flex-row-reverse p-4 sm:px-6 lg:px-8">
                 <Breadcrumbs
                     isAdmin={account.isAdmin}
