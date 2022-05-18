@@ -31,3 +31,9 @@ module.exports = {
         }
     },
 };
+
+
+// > transaction hash:    0x7860b6f98948b7747ed3790b1b1fc4903b4627b388d2827637ed5d50ee4f36a9
+// > Blocks: 1            Seconds: 17
+// > contract address:    0x0A5f264eaf8BdCf7C230ef5BE581e88a864Ea392
+// > block number:        12275014
