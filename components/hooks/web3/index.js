@@ -39,15 +39,15 @@ export const useAccount = () => {
     }
 }
 
-export const useAdmin = ({ redirectTo }) => {
+export const useAdmin = ({redirectTo}) => {
     const { account } = useAccount()
     const { requireInstall } = useWeb3()
     const router = useRouter()
 
     useEffect(() => {
         if ((
-            requireInstall ||
-            account.hasInitialResponse && !account.isAdmin) ||
+                requireInstall ||
+                account.hasInitialResponse && !account.isAdmin) ||
             account.isEmpty) {
 
             router.push(redirectTo)
@@ -85,9 +85,14 @@ export const useWalletInfo = () => {
     const { account } = useAccount()
     const { network } = useNetwork()
 
+    const isConnecting =
+        !account.hasInitialResponse &&
+        !network.hasInitialResponse
+
     return {
         account,
         network,
-        canPurchaseCourse: !!(account.data && network.isSupported)
+        isConnecting,
+        hasConnectedWallet: !!(account.data && network.isSupported)
     }
 }
