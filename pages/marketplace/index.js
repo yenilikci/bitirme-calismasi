@@ -1,18 +1,18 @@
-import {CourseCard, CourseList} from "@components/ui/course"
-import {BaseLayout} from "@components/ui/layout"
-import {getAllCourses} from "@content/courses/fetcher"
-import {useOwnedCourses, useWalletInfo} from "@components/hooks/web3"
-import {Button, Loader} from "@components/ui/common"
-import {OrderModal} from "@components/ui/order"
-import {useState} from "react"
-import {MarketHeader} from "@components/ui/marketplace"
-import {useWeb3} from "@components/providers"
-import {withToast} from "@utils/toast"
+import { CourseCard, CourseList } from "@components/ui/course"
+import { BaseLayout } from "@components/ui/layout"
+import { getAllCourses } from "@content/courses/fetcher"
+import { useOwnedCourses, useWalletInfo } from "@components/hooks/web3"
+import { Button, Loader, Message } from "@components/ui/common"
+import { OrderModal } from "@components/ui/order"
+import { useState } from "react"
+import { MarketHeader } from "@components/ui/marketplace"
+import { useWeb3 } from "@components/providers"
+import { withToast } from "@utils/toast"
 
 export default function Marketplace({courses}) {
-    const {web3, contract, requireInstall} = useWeb3()
-    const {hasConnectedWallet, isConnecting, account} = useWalletInfo()
-    const {ownedCourses} = useOwnedCourses(courses, account.data)
+    const { web3, contract, requireInstall } = useWeb3()
+    const { hasConnectedWallet, isConnecting, account } = useWalletInfo()
+    const { ownedCourses } = useOwnedCourses(courses, account.data)
 
     const [selectedCourse, setSelectedCourse] = useState(null)
     const [busyCourseId, setBusyCourseId] = useState(null)
@@ -21,8 +21,8 @@ export default function Marketplace({courses}) {
     const purchaseCourse = async (order, course) => {
         const hexCourseId = web3.utils.utf8ToHex(course.id)
         const orderHash = web3.utils.soliditySha3(
-            {type: "bytes16", value: hexCourseId},
-            {type: "address", value: account.data}
+            { type: "bytes16", value: hexCourseId },
+            { type: "address", value: account.data }
         )
 
         const value = web3.utils.toWei(String(order.price))
@@ -137,7 +137,10 @@ export default function Marketplace({courses}) {
                                             variant="white"
                                             disabled={true}
                                             size="sm">
-                                            Loading State...
+                                            { hasConnectedWallet ?
+                                                "Loading State..." :
+                                                "Connect"
+                                            }
                                         </Button>
                                     )
                                 }
@@ -164,9 +167,9 @@ export default function Marketplace({courses}) {
                                                             setSelectedCourse(course)
                                                         }}
                                                         variant="purple">
-                                                        {isBusy ?
+                                                        { isBusy ?
                                                             <div className="flex">
-                                                                <Loader size="sm"/>
+                                                                <Loader size="sm" />
                                                                 <div className="ml-2">In Progress</div>
                                                             </div> :
                                                             <div>Fund to Activate</div>
