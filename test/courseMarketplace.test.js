@@ -1,11 +1,19 @@
 const CourseMarketplace = artifacts.require("CourseMarketplace")
-const { catchRevert } = require("./utils/exceptions")
+const {catchRevert} = require("./utils/exceptions")
 
 // Mocha - testing framework
 // Chai - assertion JS library
 
 const getBalance = async address => web3.eth.getBalance(address)
 const toBN = value => web3.utils.toBN(value)
+
+const getGas = async result => {
+    const tx = await web3.eth.getTransaction(result.tx)
+    const gasUsed = toBN(result.receipt.gasUsed)
+    const gasPrice = toBN(tx.gasPrice)
+    const gas = gasUsed.mul(gasPrice)
+    return gas
+}
 
 contract("CourseMarketplace", accounts => {
 
@@ -163,15 +171,11 @@ contract("CourseMarketplace", accounts => {
         it("should be able repurchase with the original buyer", async () => {
             const beforeTxBuyerBalance = await getBalance(buyer)
             const result = await _contract.repurchaseCourse(courseHash2, {from: buyer, value})
-            const tx = await web3.eth.getTransaction(result.tx)
             const afterTxBuyerBalance = await getBalance(buyer)
-
-            const gasUsed = toBN(result.receipt.gasUsed)
-            const gasPrice = toBN(tx.gasPrice)
-            const gas = gasUsed.mul(gasPrice)
 
             const course = await _contract.getCourseByHash(courseHash2)
             const exptectedState = 0
+            const gas = await getGas(result)
 
             assert.equal(course.state, exptectedState, "The course is not in purchased state")
             assert.equal(course.price, value, `The course price is not equal to ${value}`)
