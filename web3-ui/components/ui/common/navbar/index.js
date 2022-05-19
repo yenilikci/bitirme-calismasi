@@ -1,31 +1,28 @@
-import { useWeb3 } from "@components/providers"
-import Link from "next/link"
-import { ActiveLink, Button } from "@components/ui/common"
-import { useAccount } from "@components/hooks/web3"
-import { useRouter } from "next/router"
+import {useWeb3} from "@components/providers"
+import {ActiveLink, Button} from "@components/ui/common"
+import {useAccount} from "@components/hooks/web3"
+import {useRouter} from "next/router"
 import {useTheme} from "next-themes";
-import {MoonIcon, SunIcon} from "@heroicons/react/outline";
-import {FaRegMoon, FaRegSun} from "react-icons/fa";
 import {useEffect, useState} from "react";
-import {BsMoon, BsSun} from "react-icons/bs";
 import {FiMoon, FiSun} from "react-icons/fi";
+import useTranslation from "next-translate/useTranslation";
+import Link from "next/link";
+
 
 export default function Navbar() {
 
-
-
-    const { connect, isLoading, requireInstall } = useWeb3()
-    const { account } = useAccount()
-    const { pathname } = useRouter()
+    const {connect, isLoading, requireInstall} = useWeb3()
+    const {account} = useAccount()
+    const {pathname} = useRouter()
 
     const [mounted, setMounted] = useState(false);
 
-    useEffect(() =>{
+    useEffect(() => {
         setMounted(true);
-    },[])
+    }, [])
 
 
-    const {systemTheme , theme, setTheme} = useTheme();
+    const {systemTheme, theme, setTheme} = useTheme();
 
     const renderThemeChanger= () => {
         if(!mounted) return null;
@@ -51,13 +48,13 @@ export default function Navbar() {
                 <nav className="relative" aria-label="Global">
                     <div className="flex flex-col xs:flex-row justify-between items-center">
                         <div>
-                            <ActiveLink href="/" >
+                            <ActiveLink href="/">
                                 <a
                                     className="font-medium text-xl mr-8 text-gray-500 hover:text-gray-900">
                                     Home
                                 </a>
                             </ActiveLink>
-                            <ActiveLink href="/marketplace" >
+                            <ActiveLink href="/marketplace">
                                 <a
                                     className="font-medium text-xl mr-8 text-gray-500 hover:text-gray-900">
                                     Marketplace

@@ -13,6 +13,7 @@
     "@metamask/detect-provider": "^1.2.0",
     "next": "12.1.5",
     "next-themes": "^0.2.0",
+    "next-translate": "^1.4.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-icons": "^4.3.1",
