@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar/>
     <transition name="slide" mode="out-in">
       <router-view/>
     </transition>
@@ -7,8 +8,12 @@
 </template>
 
 <script>
+import Navbar from "./components/Navbar";
 export default {
   name: "App",
+  components: {
+    Navbar
+  }
 };
 </script>
 
