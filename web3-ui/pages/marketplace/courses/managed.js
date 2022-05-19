@@ -19,9 +19,10 @@ const VerificationInput = ({onVerify}) => {
                 type="text"
                 name="account"
                 id="account"
-                className="w-96 focus:ring-indigo-500 shadow-md focus:border-indigo-500 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"
+                className="w-96 focus:ring-indigo-500 shadow-md focus:border-indigo-500 block pl-7 p-4 sm:text-sm rounded-md dark:bg-gray-700"
                 placeholder="0x2341ab..." />
             <Button
+                className="dark:border-gray-700 ml-2 shadow"
                 onClick={() => {
                     onVerify(email)
                 }}
@@ -131,11 +132,13 @@ export default function ManagedCourses() {
                 {course.state === "purchased" &&
                 <div className="mt-2">
                     <Button
+                        className="dark:border-gray-800"
                         onClick={() => activateCourse(course.hash)}
                         variant="green">
                         Activate
                     </Button>
                     <Button
+                        className="dark:border-gray-800 ml-1"
                         onClick={() => deactivateCourse(course.hash)}
                         variant="red">
                         Deactivate

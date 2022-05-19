@@ -8,16 +8,17 @@ export default function CourseFilter({onSearchSubmit, onFilterSelect}) {
 
     return (
         <div className="flex flex-col md:flex-row items-center my-4">
-            <div className="flex mr-2 relative rounded-md">
+            <div className="flex mr-2 relative rounded-md h-16">
                 <input
                     onChange={({target: {value}}) => setSearchTest(value)}
                     value={searchText}
                     type="text"
                     name="courseHash"
                     id="courseHash"
-                    className="w-52 xs:w-96 focus:ring-indigo-500 shadow-md focus:border-indigo-500 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"
+                    className="w-52 xs:w-96 focus:ring-indigo-500 shadow-md focus:border-indigo-500 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md dark:bg-gray-700 dark:text-slate-200"
                     placeholder="0x2341ab..."/>
                 <Button
+                    className="mx-2 text-white font-bold py-2 px-4 rounded-md shadow dark:border-gray-700"
                     onClick={() => onSearchSubmit(searchText)}>
                     Search
                 </Button>
@@ -25,7 +26,7 @@ export default function CourseFilter({onSearchSubmit, onFilterSelect}) {
             <div className="relative text-gray-700">
                 <select
                     onChange={({target: {value}}) => onFilterSelect(value)}
-                    className="w-72 h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline"
+                    className="w-72 h-10 pl-3 pr-6 h-16 text-base placeholder-gray-600 border dark:border-slate-400 rounded-lg appearance-none focus:shadow-outline dark:bg-gray-700 dark:text-slate-200"
                     placeholder="Regular input">
                     {OPTIONS.map(option =>
                         <option

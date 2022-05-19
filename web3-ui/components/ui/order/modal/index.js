@@ -62,10 +62,11 @@ export default function OrderModal({course, onClose, onSubmit, isNewPurchase}) {
         <Modal isOpen={isOpen}>
             <div
                 className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 dark:bg-gray-800">
                     <div className="sm:flex sm:items-start">
                         <div className="mt-3 sm:mt-0 sm:ml-4 sm:text-left">
-                            <h3 className="mb-7 text-lg font-bold leading-6 text-gray-900" id="modal-title">
+                            <h3 className="mb-7 text-lg font-bold leading-6 text-gray-900 dark:text-slate-200"
+                                id="modal-title">
                                 {course.title}
                             </h3>
                             <div className="mt-1 relative rounded-md">
@@ -86,7 +87,7 @@ export default function OrderModal({course, onClose, onSubmit, isNewPurchase}) {
                                                 className="form-checkbox"
                                             />
                                         </label>
-                                        <span>Adjust Price - only when the price is not correct</span>
+                                        <span className="dark:text-slate-300">Adjust Price - only when the price is not correct</span>
                                     </div>
                                 </div>
                                 <input
@@ -104,9 +105,9 @@ export default function OrderModal({course, onClose, onSubmit, isNewPurchase}) {
                                     type="text"
                                     name="price"
                                     id="price"
-                                    className="disabled:opacity-50 w-80 mb-1 focus:ring-indigo-500 shadow-md focus:border-indigo-500 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"
+                                    className="bg-white dark:bg-gray-700 disabled:opacity-50 w-80 mb-1 focus:ring-indigo-500 shadow-md focus:border-indigo-500 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"
                                 />
-                                <p className="text-xs text-gray-700">
+                                <p className="text-xs text-gray-700 dark:text-slate-300">
                                     Price will be verified at the time of the order. If the price will be lower, order
                                     can be declined (+- 2% slipage is allowed)
                                 </p>
@@ -127,10 +128,10 @@ export default function OrderModal({course, onClose, onSubmit, isNewPurchase}) {
                                         type="email"
                                         name="email"
                                         id="email"
-                                        className="w-80 focus:ring-indigo-500 shadow-md focus:border-indigo-500 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"
+                                        className="w-80 focus:ring-indigo-500 bg-white dark:bg-gray-700 shadow-md focus:border-indigo-500 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"
                                         placeholder="x@y.com"
                                     />
-                                    <p className="text-xs text-gray-700 mt-1">
+                                    <p className="text-xs text-gray-700 mt-1 dark:text-slate-300">
                                         It&apos;s important to fill a correct email, otherwise the order cannot be
                                         verified. We are not storing your email anywhere
                                     </p>
@@ -149,7 +150,7 @@ export default function OrderModal({course, onClose, onSubmit, isNewPurchase}) {
                                         type="email"
                                         name="confirmationEmail"
                                         id="confirmationEmail"
-                                        className="w-80 focus:ring-indigo-500 shadow-md focus:border-indigo-500 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"
+                                        className="w-80 dark:text-slate-300 focus:ring-indigo-500 bg-white dark:bg-gray-700 shadow-md focus:border-indigo-500 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"
                                         placeholder="x@y.com"/>
                                 </div>
                             </>
@@ -162,9 +163,9 @@ export default function OrderModal({course, onClose, onSubmit, isNewPurchase}) {
                                             setHasAgreedTOS(checked)
                                         }}
                                         type="checkbox"
-                                        className="form-checkbox"/>
+                                        className="form-checkbox bg-white dark:bg-gray-700"/>
                                 </label>
-                                <span>I accept &apos;terms of service&apos; and I agree that my order can be rejected in the case data provided above are not correct</span>
+                                <span className="text-slate-300">I accept &apos;terms of service&apos; and I agree that my order can be rejected in the case data provided above are not correct</span>
                             </div>
                             {formState.message &&
                             <div className="p-4 my-3 text-yellow-700 bg-yellow-200 rounded-lg text-sm">
@@ -174,8 +175,9 @@ export default function OrderModal({course, onClose, onSubmit, isNewPurchase}) {
                         </div>
                     </div>
                 </div>
-                <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex">
+                <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex dark:bg-gray-700">
                     <Button
+                        className="dark:border-gray-700"
                         disabled={formState.isDisabled}
                         onClick={() => {
                             onSubmit(order, course)
@@ -184,7 +186,9 @@ export default function OrderModal({course, onClose, onSubmit, isNewPurchase}) {
                     </Button>
                     <Button
                         onClick={closeModal}
-                        variant="red">
+                        variant="red"
+                        className="dark:border-gray-700 ml-2"
+                    >
                         Cancel
                     </Button>
                 </div>

@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3c5d0b32-9ce6-4546-8dfd-3dcda5e81bbf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/blog/card/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/blog/card/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/pages/blogs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/pages/blogs/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/common/navbar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/common/navbar/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/course/card/Managed.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/course/card/Managed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/course/filter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/course/filter/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/order/modal/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/order/modal/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web3-ui/pages/marketplace/courses/managed.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/pages/marketplace/courses/managed.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +64,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652915344465</updated>
-      <workItem from="1652915347386" duration="14176000" />
+      <workItem from="1652915347386" duration="15998000" />
     </task>
     <servers />
   </component>

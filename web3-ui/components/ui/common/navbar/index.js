@@ -105,7 +105,7 @@ export default function Navbar() {
             { account.data &&
             !pathname.includes("/marketplace") &&
             <div className="flex justify-end pt-1 sm:px-6 lg:px-8">
-                <div className="text-white bg-indigo-600 rounded-md p-2">
+                <div className="bg-fuchsia-200 dark:text-slate-200 dark:bg-fuchsia-500 rounded-md p-2">
                     {account.data}
                 </div>
             </div>
