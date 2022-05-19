@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="3c5d0b32-9ce6-4546-8dfd-3dcda5e81bbf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-ui/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-ui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-ui/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-ui/src/pages/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/src/pages/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-ui/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/src/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +41,7 @@
       <recent name="$PROJECT_DIR$/api/v1/src/api-routes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/admin-ui" />
       <recent name="$PROJECT_DIR$/admin-ui/src" />
       <recent name="$PROJECT_DIR$/api/v1/src" />
       <recent name="$PROJECT_DIR$/web3-ui" />
@@ -50,7 +55,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652915344465</updated>
-      <workItem from="1652915347386" duration="6627000" />
+      <workItem from="1652915347386" duration="10440000" />
     </task>
     <servers />
   </component>

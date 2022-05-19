@@ -9,10 +9,14 @@ import VueSweetalert2 from "vue-sweetalert2";
 
 import router from "./router";
 import store from "./store";
+import axios from "axios";
+import service from "./services";
 
-
+axios.defaults.baseURL = "http://localhost:5001/api/v1/";
 Vue.use(VueSweetalert2);
 Vue.use(Vuelidate);
+
+Vue.prototype.$service = service;
 
 new Vue({
   router,

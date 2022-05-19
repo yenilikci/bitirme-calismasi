@@ -90,6 +90,10 @@ export default {
       this.isSubmit = true;
       console.log(this.email);
       console.log(this.password);
+      this.$service.Auth.Login(this.email, this.password).then(
+
+
+      );
     },
   },
 };
