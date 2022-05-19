@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3c5d0b32-9ce6-4546-8dfd-3dcda5e81bbf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/bitirme-calismasi.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/bitirme-proje.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/code-comments.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-ui/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/src/main.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="29MG3TkygHsGrrCrClIYvz3rw6E" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/api/.env" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin-ui" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/admin-ui" />
+      <recent name="$PROJECT_DIR$/api/v1/src" />
+      <recent name="$PROJECT_DIR$/api/v1/src/api-routes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/admin-ui/src" />
+      <recent name="$PROJECT_DIR$/api/v1/src" />
+      <recent name="$PROJECT_DIR$/web3-ui" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c5d0b32-9ce6-4546-8dfd-3dcda5e81bbf" name="Changes" comment="" />
+      <created>1652915344465</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652915344465</updated>
+      <workItem from="1652915347386" duration="5506000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
