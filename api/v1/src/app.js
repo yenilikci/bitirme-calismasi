@@ -15,5 +15,5 @@ app.use(helmet());
 
 app.listen(process.env.APP_PORT, () => {
     console.log("Server is running on port " + process.env.APP_PORT);
-    app.use("/users", UserRoutes);
+    app.use("/api/v1/users", UserRoutes);
 });
