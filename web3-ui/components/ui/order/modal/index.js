@@ -164,7 +164,7 @@ export default function OrderModal({course, onClose, onSubmit, isNewPurchase}) {
                                         type="checkbox"
                                         className="form-checkbox"/>
                                 </label>
-                                <span>I accept Eincode &apos;terms of service&apos; and I agree that my order can be rejected in the case data provided above are not correct</span>
+                                <span>I accept &apos;terms of service&apos; and I agree that my order can be rejected in the case data provided above are not correct</span>
                             </div>
                             {formState.message &&
                             <div className="p-4 my-3 text-yellow-700 bg-yellow-200 rounded-lg text-sm">

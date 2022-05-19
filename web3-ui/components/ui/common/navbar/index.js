@@ -74,6 +74,7 @@ export default function Navbar() {
                             {renderThemeChanger()}
                             { isLoading ?
                                 <Button
+                                    className="bg-slate-400 dark:bg-gray-700 shadow"
                                     disabled={true}
                                     onClick={connect}>
                                     Loading...
@@ -81,15 +82,17 @@ export default function Navbar() {
                                 account.data ?
                                     <Button
                                         hoverable={false}
-                                        className="cursor-default dark:bg-indigo-900">
+                                        className="cursor-default bg-slate-400 dark:bg-gray-700 shadow">
                                         Hi there {account.isAdmin && "Admin"}
                                     </Button> :
                                     requireInstall ?
                                         <Button
+                                            className="bg-slate-400 dark:bg-gray-700 shadow"
                                             onClick={() => window.open("https://metamask.io/download.html", "_blank")}>
                                             Install Metamask
                                         </Button> :
                                         <Button
+                                            className="bg-slate-400 dark:bg-gray-700 shadow"
                                             onClick={connect}>
                                             Connect
                                         </Button>
