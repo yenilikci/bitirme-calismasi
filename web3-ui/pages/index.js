@@ -25,7 +25,7 @@ export default function Home({courses}) {
                                         size="sm"
                                         variant="lightPurple"
                                     >
-                                        View Details
+                                        {t('common:View Details')}
                                     </Button>
                                 </Link>
                             )

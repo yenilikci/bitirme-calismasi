@@ -6,7 +6,6 @@ import {useTheme} from "next-themes";
 import {useEffect, useState} from "react";
 import {FiMoon, FiSun} from "react-icons/fi";
 import useTranslation from "next-translate/useTranslation";
-import Link from "next/link";
 
 
 export default function Navbar() {
@@ -14,6 +13,8 @@ export default function Navbar() {
     const {connect, isLoading, requireInstall} = useWeb3()
     const {account} = useAccount()
     const {pathname} = useRouter()
+
+    const {t} = useTranslation();
 
     const [mounted, setMounted] = useState(false);
 
@@ -51,19 +52,19 @@ export default function Navbar() {
                             <ActiveLink href="/">
                                 <a
                                     className="font-medium text-xl mr-8 text-gray-500 hover:text-gray-900">
-                                    Home
+                                    {t('common:Home')}
                                 </a>
                             </ActiveLink>
                             <ActiveLink href="/marketplace">
                                 <a
                                     className="font-medium text-xl mr-8 text-gray-500 hover:text-gray-900">
-                                    Marketplace
+                                    {t('common:Marketplace')}
                                 </a>
                             </ActiveLink>
                             <ActiveLink href="/blogs" >
                                 <a
                                     className="font-medium text-xl mr-8 text-gray-500 hover:text-gray-900">
-                                    Blogs
+                                    {t('common:Blog')}
                                 </a>
                             </ActiveLink>
                         </div>
@@ -80,7 +81,7 @@ export default function Navbar() {
                                     <Button
                                         hoverable={false}
                                         className="cursor-default bg-slate-400 dark:bg-gray-700 shadow  dark:border-gray-900">
-                                        Hi there {account.isAdmin && "Admin"}
+                                        {t('common:Hi there')} {account.isAdmin && "Admin"}
                                     </Button> :
                                     requireInstall ?
                                         <Button

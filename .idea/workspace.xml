@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3c5d0b32-9ce6-4546-8dfd-3dcda5e81bbf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/common/footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/common/footer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/common/hero/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/common/hero/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/common/navbar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/common/navbar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web3-ui/locales/en/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/locales/en/common.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web3-ui/locales/tr/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/locales/tr/common.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +63,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652915344465</updated>
-      <workItem from="1652915347386" duration="19132000" />
+      <workItem from="1652915347386" duration="20779000" />
     </task>
     <servers />
   </component>
