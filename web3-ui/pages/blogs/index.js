@@ -12,13 +12,13 @@ export default function Blogs({blogs}) {
             <BlogList
                 blogs={blogs}
             >
-                {course =>
+                {blog =>
                     <BlogCard
-                        key={course.id}
-                        course={course}
+                        key={blog.id}
+                        blog={blog}
                         Footer={() => {
                             return (
-                                <Link href={"/courses/" + course.slug}>
+                                <Link href={"/blogs/" + blog.slug}>
                                     <Button
                                         size="sm"
                                         variant="lightPurple"

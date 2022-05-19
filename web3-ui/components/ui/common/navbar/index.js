@@ -74,7 +74,7 @@ export default function Navbar() {
                             {renderThemeChanger()}
                             { isLoading ?
                                 <Button
-                                    className="bg-slate-400 dark:bg-gray-700 shadow"
+                                    className="bg-slate-400 dark:bg-gray-700 shadow dark:border-gray-900"
                                     disabled={true}
                                     onClick={connect}>
                                     Loading...
@@ -82,17 +82,17 @@ export default function Navbar() {
                                 account.data ?
                                     <Button
                                         hoverable={false}
-                                        className="cursor-default bg-slate-400 dark:bg-gray-700 shadow">
+                                        className="cursor-default bg-slate-400 dark:bg-gray-700 shadow  dark:border-gray-900">
                                         Hi there {account.isAdmin && "Admin"}
                                     </Button> :
                                     requireInstall ?
                                         <Button
-                                            className="bg-slate-400 dark:bg-gray-700 shadow"
+                                            className="bg-slate-400 dark:bg-gray-700 dark:border-gray-900 shadow"
                                             onClick={() => window.open("https://metamask.io/download.html", "_blank")}>
                                             Install Metamask
                                         </Button> :
                                         <Button
-                                            className="bg-slate-400 dark:bg-gray-700 shadow"
+                                            className="bg-slate-400 dark:bg-gray-700 dark:border-gray-900 shadow"
                                             onClick={connect}>
                                             Connect
                                         </Button>
