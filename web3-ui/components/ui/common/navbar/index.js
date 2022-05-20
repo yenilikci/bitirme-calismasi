@@ -45,7 +45,7 @@ export default function Navbar() {
 
     return (
         <section>
-            <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
+            <div className="relative py-6 sm:px-6 lg:px-8 dark:bg-gray-900 rounded bg-white">
                 <nav className="relative" aria-label="Global">
                     <div className="flex flex-col xs:flex-row justify-between items-center">
                         <div>
@@ -102,16 +102,16 @@ export default function Navbar() {
 
                         </div>
                     </div>
+                    {account.data &&
+                    !pathname.includes("/marketplace") &&
+                    <div className="flex justify-end">
+                        <div className="bg-fuchsia-200 dark:text-slate-200 dark:bg-fuchsia-700 rounded-md p-2">
+                            {account.data}
+                        </div>
+                    </div>
+                    }
                 </nav>
             </div>
-            { account.data &&
-            !pathname.includes("/marketplace") &&
-            <div className="flex justify-end pt-1 sm:px-6 lg:px-8">
-                <div className="bg-fuchsia-200 dark:text-slate-200 dark:bg-fuchsia-500 rounded-md p-2">
-                    {account.data}
-                </div>
-            </div>
-            }
         </section>
     )
 }

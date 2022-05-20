@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3c5d0b32-9ce6-4546-8dfd-3dcda5e81bbf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/components/hooks/useEthPrice.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/hooks/useEthPrice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/common/footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/common/footer/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/common/message/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/common/message/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/common/navbar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/common/navbar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/course/filter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/course/filter/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/web3/walletbar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/web3/walletbar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/locales/en/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/locales/en/common.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/locales/tr/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/locales/tr/common.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/layout/base/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/layout/base/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +37,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="discord-application" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -69,7 +63,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652915344465</updated>
-      <workItem from="1652915347386" duration="32065000" />
+      <workItem from="1652915347386" duration="34559000" />
+      <workItem from="1653086785479" duration="99000" />
     </task>
     <servers />
   </component>
