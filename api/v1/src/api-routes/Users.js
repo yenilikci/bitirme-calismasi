@@ -15,7 +15,7 @@ const authenticate = require("../middlewares/authenticate");
 const schemas = require("../validations/Users");
 const router = express.Router();
 
-router.route("/").get(index).post(validate(schemas.createValidation), create);
+router.route("/").get(authenticate, index).post(validate(schemas.createValidation), create);
 
 router.route("/login").post(validate(schemas.loginValidation), login);
 
