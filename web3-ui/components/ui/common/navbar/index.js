@@ -6,9 +6,11 @@ import {useTheme} from "next-themes";
 import {useEffect, useState} from "react";
 import {FiMoon, FiSun} from "react-icons/fi";
 import useTranslation from "next-translate/useTranslation";
+import {useDencrypt} from "use-dencrypt-effect";
 
-
+const values = ["Coursehash.", "Bitirme Çalışması"];
 export default function Navbar() {
+    const {result, dencrypt} = useDencrypt();
 
     const {connect, isLoading, requireInstall} = useWeb3()
     const {account} = useAccount()
@@ -20,6 +22,13 @@ export default function Navbar() {
 
     useEffect(() => {
         setMounted(true);
+
+        let i = 0;
+        const action = setInterval(() => {
+            dencrypt(values[i]);
+            i = i === values.length - 1 ? 0 : i + 1;
+        }, 4500);
+        return () => clearInterval(action);
     }, [])
 
 
@@ -51,7 +60,7 @@ export default function Navbar() {
                         <div>
                             <a className="flex items-center">
                                 <span
-                                    className="self-center text-4xl font-semibold whitespace-nowrap dark:text-white">Coursehash.</span>
+                                    className="self-center text-4xl font-semibold whitespace-nowrap dark:text-white">{result}</span>
                             </a>
                             <ActiveLink href="/">
                                 <a

@@ -5879,6 +5879,11 @@
   "resolved" "https://registry.npmjs.org/url-to-options/-/url-to-options-1.0.1.tgz"
   "version" "1.0.1"
 
+"use-dencrypt-effect@^1.0.2":
+  "integrity" "sha512-HfgvcQAUEoqSrAHiHrZL4stw5qc3JIDpN4lsYlcBa9WtOy4RKG03WlZ1Iq9k1OMOV3D2WiI0AFL8uIXWzYWHFA=="
+  "resolved" "https://registry.npmjs.org/use-dencrypt-effect/-/use-dencrypt-effect-1.0.2.tgz"
+  "version" "1.0.2"
+
 "utf-8-validate@^5.0.2":
   "integrity" "sha512-Yek7dAy0v3Kl0orwMlvi7TPtiCNrdfHNd7Gcc/pLq4BLXqfAmd0J7OWMizUQnTTJsyjKn02mU7anqwfmUP4J8Q=="
   "resolved" "https://registry.npmjs.org/utf-8-validate/-/utf-8-validate-5.0.9.tgz"
