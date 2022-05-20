@@ -48,3 +48,4 @@ export default function CourseFilter({onSearchSubmit, onFilterSelect}) {
         </div>
     )
 }
+

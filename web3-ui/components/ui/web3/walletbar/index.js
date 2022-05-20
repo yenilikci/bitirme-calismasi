@@ -1,23 +1,28 @@
 import {useWalletInfo} from "@components/hooks/web3"
 import {useWeb3} from "@components/providers"
 import {Button} from "@components/ui/common"
+import useTranslation from "next-translate/useTranslation";
 
 
 export default function WalletBar() {
     const {requireInstall} = useWeb3()
     const {account, network} = useWalletInfo()
 
+    const {t} = useTranslation();
+
     return (
         <section className="bg-white shadow rounded-lg dark:bg-gray-700">
             <div className="p-8">
-                <h1 className="text-base xs:text-xl break-words">Hello, {account.data}</h1>
-                <h2 className="subtitle mb-5 text-sm xs:text-base">I hope you are having a great day!</h2>
+                <h1 className="text-base xs:text-xl break-words">{t('common:Hello')}, {account.data}</h1>
+                <h2 className="subtitle mb-5 text-sm xs:text-base">
+                    {t('common:I hope you are having a great day!')}
+                </h2>
                 <div className="flex justify-between items-center">
                     <div className="sm:flex sm:justify-center lg:justify-start">
                         <Button
                             className="mr-2 text-sm xs:text-lg p-2"
                             variant="white">
-                            Learn how to purchase
+                            {t('common:Learn how to purchase')}
                         </Button>
                     </div>
                     <div>
@@ -39,7 +44,7 @@ export default function WalletBar() {
                         }
                         {network.data &&
                         <div>
-                            <span>Currently on </span>
+                            <span>{t('common:Currently on')}: </span>
                             <strong className="text-2xl">{network.data}</strong>
                         </div>
                         }

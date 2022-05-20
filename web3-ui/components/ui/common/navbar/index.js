@@ -49,6 +49,10 @@ export default function Navbar() {
                 <nav className="relative" aria-label="Global">
                     <div className="flex flex-col xs:flex-row justify-between items-center">
                         <div>
+                            <a className="flex items-center">
+                                <span
+                                    className="self-center text-4xl font-semibold whitespace-nowrap dark:text-white">Coursehash.</span>
+                            </a>
                             <ActiveLink href="/">
                                 <a
                                     className="font-medium text-xl mr-8 text-gray-500 hover:text-gray-900">

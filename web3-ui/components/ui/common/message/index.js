@@ -48,6 +48,7 @@ export default function Message({children, type = "success", size = "md"}) {
                         </button>
                     </div>
                 </div>
+
             </div>
         </div>
     )

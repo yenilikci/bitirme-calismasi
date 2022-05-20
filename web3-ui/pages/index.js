@@ -10,8 +10,7 @@ export default function Home({courses}) {
     return (
         <>
             <Hero/>
-            {t("common:Homepage")}
-            <CourseList
+                <CourseList
                 courses={courses}
             >
                 {course =>

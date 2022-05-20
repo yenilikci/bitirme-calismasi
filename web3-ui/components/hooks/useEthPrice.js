@@ -20,3 +20,4 @@ export const useEthPrice = () => {
     const perItem = (data && (COURSE_PRICE / Number(data)).toFixed(6)) ?? null
     return {eth: {data, perItem, ...rest}}
 }
+
