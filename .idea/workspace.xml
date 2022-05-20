@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c5d0b32-9ce6-4546-8dfd-3dcda5e81bbf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/common/footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/common/footer/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/common/navbar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/common/navbar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/layout/base/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/layout/base/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="3c5d0b32-9ce6-4546-8dfd-3dcda5e81bbf" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +28,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/api/.env" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web3-ui/pages/blogs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/v1/src/controllers" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -42,10 +37,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/v1/src/controllers" />
+      <recent name="$PROJECT_DIR$/api/v1/src/services" />
+      <recent name="$PROJECT_DIR$/api/v1/src/models" />
       <recent name="$PROJECT_DIR$/web3-ui/pages/blogs" />
       <recent name="$PROJECT_DIR$/admin-ui" />
-      <recent name="$PROJECT_DIR$/api/v1/src" />
-      <recent name="$PROJECT_DIR$/api/v1/src/api-routes" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web3-ui/public" />
@@ -64,7 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1652915344465</updated>
       <workItem from="1652915347386" duration="34559000" />
-      <workItem from="1653086785479" duration="99000" />
+      <workItem from="1653086785479" duration="942000" />
     </task>
     <servers />
   </component>
