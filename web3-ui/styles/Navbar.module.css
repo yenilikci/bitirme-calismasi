@@ -1,0 +1,85 @@
+.neonTextLight {
+    animation: pulsateLight 1.5s infinite alternate;
+    border-radius: 2rem;
+    font-weight: normal;
+    text-shadow: 0 0 7px #4f45e4,
+    0 0 10px #4f45e4,
+    0 0 21px #4f45e4,
+    0 0 42px #4f45e4,
+    0 0 82px #4f45e4,
+    0 0 92px #4f45e4,
+    0 0 102px #4f45e4,
+    0 0 151px #4f45e4;
+}
+
+.neonTextDark {
+    animation: pulsateDark 1.5s infinite alternate;
+    border-radius: 2rem;
+    font-weight: normal;
+    text-shadow: 0 0 7px #4f45e4,
+    0 0 10px #4f45e4,
+    0 0 21px #4f45e4,
+    0 0 42px #4f45e4,
+    0 0 82px #4f45e4,
+    0 0 92px #4f45e4,
+    0 0 102px #4f45e4,
+    0 0 151px #4f45e4;
+}
+
+@keyframes pulsateLight {
+
+    100% {
+
+        text-shadow: 0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px #4f45e4,
+        0 0 80px #4f45e4,
+        0 0 90px #4f45e4,
+        0 0 100px #4f45e4,
+        0 0 150px #4f45e4;
+
+    }
+
+    0% {
+
+        text-shadow: 0 0 2px #fff,
+        0 0 4px #fff,
+        0 0 6px #fff,
+        0 0 10px #4f45e4,
+        0 0 45px #4f45e4,
+        0 0 55px #4f45e4,
+        0 0 70px #4f45e4,
+        0 0 80px #4f45e4;
+
+    }
+}
+
+@keyframes pulsateDark {
+
+    100% {
+
+        text-shadow: 0 0 3px #fff,
+        0 0 5px #fff,
+        0 0 15px #fff,
+        0 0 30px #4f45e4,
+        0 0 50px #4f45e4,
+        0 0 65px #4f45e4,
+        0 0 80px #4f45e4,
+        0 0 100px #4f45e4;
+
+    }
+
+    0% {
+
+        text-shadow: 0 0 1px #fff,
+        0 0 1px #fff,
+        0 0 2px #fff,
+        0 0 4px #4f45e4,
+        0 0 34px #4f45e4,
+        0 0 45px #4f45e4,
+        0 0 60px #4f45e4,
+        0 0 70px #4f45e4;
+
+    }
+}

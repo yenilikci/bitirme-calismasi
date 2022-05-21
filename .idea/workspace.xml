@@ -4,9 +4,7 @@
     <list default="true" id="3c5d0b32-9ce6-4546-8dfd-3dcda5e81bbf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/common/navbar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/common/navbar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web3-ui/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web3-ui/components/ui/course/card/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web3-ui/components/ui/course/card/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1652915344465</updated>
       <workItem from="1652915347386" duration="34559000" />
-      <workItem from="1653086785479" duration="2661000" />
+      <workItem from="1653086785479" duration="5217000" />
     </task>
     <servers />
   </component>

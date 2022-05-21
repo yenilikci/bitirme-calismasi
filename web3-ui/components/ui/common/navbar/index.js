@@ -7,6 +7,7 @@ import {useEffect, useState} from "react";
 import {FiMoon, FiSun} from "react-icons/fi";
 import useTranslation from "next-translate/useTranslation";
 import {useDencrypt} from "use-dencrypt-effect";
+import styles from "../../../../styles/Navbar.module.css";
 
 const values = ["Coursehash.", "Bitirme Çalışması"];
 export default function Navbar() {
@@ -27,7 +28,7 @@ export default function Navbar() {
         const action = setInterval(() => {
             dencrypt(values[i]);
             i = i === values.length - 1 ? 0 : i + 1;
-        }, 4500);
+        }, 3000);
         return () => clearInterval(action);
     }, [])
 
@@ -60,7 +61,7 @@ export default function Navbar() {
                         <div>
                             <a className="flex items-center">
                                 <span
-                                    className="self-center text-4xl font-semibold whitespace-nowrap dark:text-white">{result}</span>
+                                    className={`self-center text-4xl font-semibold whitespace-nowrap mb-3 text-indigo-900 dark:text-white ${theme == 'dark' ? styles.neonTextDark : null}`}>{result == "" ? "Coursehash." : result}</span>
                             </a>
                             <ActiveLink href="/">
                                 <a
