@@ -1,19 +1,57 @@
 <template>
   <div>
-    <Navbar/>
-    <transition name="slide" mode="out-in">
-      <router-view/>
-    </transition>
+    <BootstrapSidebar
+        :initial-show="initialShow"
+        :links="links"
+        :header="header"
+        @sidebarChanged="onSidebarChanged"
+    >
+      <template v-slot:navbar>
+        <b-navbar
+            id="mainNavbar"
+            toggleable="lg"
+            type="light"
+            variant="light"
+            fixed="top"
+        >
+          <b-navbar-nav>
+            <b-nav-item>Coursehash Admin Panel</b-nav-item>
+          </b-navbar-nav>
+        </b-navbar>
+      </template>
+
+      <template v-slot:content>
+        <b-container style="margin-top: 56px;">
+          <transition name="slide" mode="out-in">
+            <router-view/>
+          </transition>
+        </b-container>
+      </template>
+    </BootstrapSidebar>
   </div>
 </template>
 
 <script>
-import Navbar from "./components/Navbar";
+import BootstrapSidebar from "vue-bootstrap-sidebar";
 export default {
-  name: "App",
   components: {
-    Navbar
-  }
+    BootstrapSidebar,
+  },
+  data() {
+    return {
+      initialShow: true,
+      header: "<h3>Menü</h3>",
+      links: [
+        { name: "Anasayfa", href: { name: "home" }, faIcon: ["fas", "home"] },
+        { name: "Kurslar", href: { name: "about" }, faIcon: "users" },
+        { name: "Blog Yazıları", href: { name: "contact" }, faIcon: "phone" },
+        { name: "Ayarlar", href: { name: "contact" }, faIcon: "phone" },
+      ],
+    };
+  },
+  methods: {
+    onSidebarChanged() {},
+  },
 };
 </script>
 
@@ -58,4 +96,9 @@ export default {
     transform: translateY(20px);
   }
 }
+</style>
+<style lang="scss">
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap-vue/src/index.scss";
+@import "node_modules/vue-bootstrap-sidebar/src/scss/default-theme";
 </style>
