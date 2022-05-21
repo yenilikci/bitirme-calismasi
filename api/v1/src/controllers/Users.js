@@ -40,7 +40,7 @@ const login = (req, res) => {
     loginUser(req.body)
         .then((user) => {
             if (!user) {
-                res.status(httpStatus.NOT_FOUND).send({message: "User not found"});
+                res.status(httpStatus.NOT_FOUND_ERR).send({message: "User not found"});
             }
 
             user = {

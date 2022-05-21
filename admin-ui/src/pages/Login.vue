@@ -90,10 +90,19 @@ export default {
       this.isSubmit = true;
       console.log(this.email);
       console.log(this.password);
-      this.$service.Auth.Login(this.email, this.password).then(
-
-
-      );
+      if (this.$v.$invalid) { // validation problem
+        console.log('error')
+      } else {
+        this.$service.Auth.Login(this.email, this.password).then(
+            (response) => {
+              console.log(response);
+              this.$router.push('/');
+            },
+            (error) => {
+              console.log(error);
+            }
+        );
+      }
     },
   },
 };
