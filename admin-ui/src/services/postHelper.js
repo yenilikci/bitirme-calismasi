@@ -8,6 +8,6 @@ export default {
             },
             timeout: 580000,
         }
-        axios.post(api, data, configuration)
+        return axios.post(api, data, configuration)
     }
 }

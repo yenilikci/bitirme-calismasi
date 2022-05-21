@@ -95,10 +95,20 @@ export default {
       } else {
         this.$service.Auth.Login(this.email, this.password).then(
             (response) => {
-              console.log(response);
-              this.$router.push('/');
+              if (response.status === 200) {
+                this.$vToastify.success('Giriş Başarılı', 'Başarılı');
+                this.$store.commit('auth/setUser', {
+                  'full_name': response.data.full_name,
+                  'email': response.data.email,
+                });
+                this.$store.commit("auth/setToken", response.data.tokens.access_token);
+                this.$router.push('/');
+              } else {
+                this.$vToastify.error('Giriş Başarısız', 'Başarısız');
+              }
             },
             (error) => {
+              this.$vToastify.error('Giriş Başarısız', 'Başarısız');
               console.log(error);
             }
         );
