@@ -1,56 +1,15 @@
 <template>
   <div class="container container-fluid" style="width: 80vw !important;">
+    <h1 class="my-3">İstatistikler:</h1>
     <div class="row">
       <div class="col">
-        <b-card
-            title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=25"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem;"
-            class="mb-2"
-        >
-          <b-card-text>
-            Some quick example text to build on the card title and make up the bulk of the card's content.
-          </b-card-text>
-
-          <b-button href="#" variant="primary">Go somewhere</b-button>
-        </b-card>
+        <StatusCard title="Kurs Sayısı" text="0" imgSrc="course-count.jpg" imgAlt="course-count"/>
       </div>
       <div class="col">
-        <b-card
-            title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=25"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem;"
-            class="mb-2"
-        >
-          <b-card-text>
-            Some quick example text to build on the card title and make up the bulk of the card's content.
-          </b-card-text>
-
-          <b-button href="#" variant="primary">Go somewhere</b-button>
-        </b-card>
+        <StatusCard title="Blog Sayısı" text="0" imgSrc="blog-count.jpg" imgAlt="blog-count"/>
       </div>
       <div class="col">
-        <b-card
-            title="Card Title"
-            img-src="https://picsum.photos/600/300/?image=25"
-            img-alt="Image"
-            img-top
-            tag="article"
-            style="max-width: 20rem;"
-            class="mb-2"
-        >
-          <b-card-text>
-            Some quick example text to build on the card title and make up the bulk of the card's content.
-          </b-card-text>
-
-          <b-button href="#" variant="primary">Go somewhere</b-button>
-        </b-card>
+        <StatusCard title="Görüntülenme Sayısı" text="0" imgSrc="view-count.jpg" imgAlt="view-count"/>
       </div>
     </div>
   </div>
@@ -58,7 +17,12 @@
 
 
 <script>
+import StatusCard from '@/components/StatusCard/StatusCard.vue'
+
 export default {
-  name: 'Homepage'
+  name: 'Homepage',
+  components: {
+    StatusCard
+  }
 }
 </script>
