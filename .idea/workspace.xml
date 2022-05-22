@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3c5d0b32-9ce6-4546-8dfd-3dcda5e81bbf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-ui/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-ui/src/pages/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/src/pages/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-ui/src/services/postHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/src/services/postHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-ui/src/components/Navbar.vue" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +31,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/api/.env" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/v1/src/api-routes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/v1/src/models" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -44,10 +40,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/v1/src/models" />
       <recent name="$PROJECT_DIR$/api/v1/src/api-routes" />
       <recent name="$PROJECT_DIR$/api/v1/src/controllers" />
       <recent name="$PROJECT_DIR$/api/v1/src/services" />
-      <recent name="$PROJECT_DIR$/api/v1/src/models" />
       <recent name="$PROJECT_DIR$/web3-ui/pages/blogs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -67,7 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1652915344465</updated>
       <workItem from="1652915347386" duration="34559000" />
-      <workItem from="1653086785479" duration="11953000" />
+      <workItem from="1653086785479" duration="19722000" />
     </task>
     <servers />
   </component>
