@@ -43,7 +43,7 @@ export default {
       header: "<h3>Menü</h3>",
       links: [
         { name: "Anasayfa", href: { name: "home" }, faIcon: ["fas", "home"] },
-        { name: "Kurslar", href: { name: "about" }, faIcon: "users" },
+        { name: "Kurslar", href: { name: "courses" }, faIcon: "users" },
         { name: "Blog Yazıları", href: { name: "contact" }, faIcon: "phone" },
         { name: "Ayarlar", href: { name: "contact" }, faIcon: "phone" },
       ],

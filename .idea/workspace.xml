@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="3c5d0b32-9ce6-4546-8dfd-3dcda5e81bbf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-ui/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-ui/src/pages/Homepage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-ui/src/pages/Login.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-ui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-ui/src/services/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/src/services/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-ui/src/services/postHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-ui/src/services/postHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/v1/src/controllers/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/src/controllers/Settings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1652915344465</updated>
       <workItem from="1652915347386" duration="34559000" />
-      <workItem from="1653086785479" duration="23804000" />
+      <workItem from="1653086785479" duration="27480000" />
     </task>
     <servers />
   </component>

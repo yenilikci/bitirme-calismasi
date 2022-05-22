@@ -17,7 +17,7 @@ const index = (req, res) => {
 };
 
 const update = (req, res) => {
-    modify({_id: req.setting?._id}, req.body)
+    modify({_id: req.body?._id}, req.body)
         .then((updatedSetting) => {
             res.status(httpStatus.OK).send(updatedSetting);
         })

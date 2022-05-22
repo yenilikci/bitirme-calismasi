@@ -1,17 +1,17 @@
 import axios from "axios";
 
 export default {
-    postJson(api, data) {
+    getJson(api, data) {
         const configuration = {
             headers: {
                 'content-type': 'application/json',
             },
             timeout: 580000,
         }
-        return axios.post(api, data, configuration)
+        return axios.get(api, data, configuration)
     },
 
-    postJsonHeader(api, data) {
+    getJsonHeader(api, data) {
         const configuration = {
             headers: {
                 'content-type': 'application/json',
@@ -19,6 +19,6 @@ export default {
             },
             timeout: 580000,
         }
-        return axios.post(api, data, configuration)
+        return axios.get(api, data, configuration)
     }
 }
