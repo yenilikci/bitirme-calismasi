@@ -7,12 +7,8 @@
     "coverImage": "https://thrangra.sirv.com/Next_TypeScript_Shopify_Final.jpg",
     "author": "Filip Jerga",
     "slug": "next-js-typescript-with-shopify-integration-full-guide",
-    "wsl": [
-      "Build Next JS apps on your own",
-      "Build ecommerce apps with modern technologies",
-      "Use Shopify to your advantage"
-    ],
-    "createdAt": ""
+    "createdAt": "",
+    "updatedAt": ""
   },
   {
     "id": "1331625",
@@ -22,12 +18,7 @@
     "coverImage": "https://thrangra.sirv.com/Gatsby.jpeg",
     "author": "Filip Jerga",
     "slug": "gatsby-js-developer-s-guide-important-parts-blog-app",
-    "wsl": [
-      "Build Gatsby JS apps on your own",
-      "Build static page apps with modern technologies",
-      "Understand meaning and benefits of JAMStack",
-      "Use GraphQL to your advantage"
-    ],
-    "createdAt": ""
+    "createdAt": "",
+    "updatedAt": ""
   }
 ]
