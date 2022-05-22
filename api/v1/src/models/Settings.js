@@ -16,10 +16,9 @@ const SettingSchema = new Mongoose.Schema(
         },
         footerGithub: {
             type: String,
-            required: true
         },
     },
     {timestamps: true, versionKey: false}
 );
 
-module.exports = Mongoose.model("setting", CourseSchema);
+module.exports = Mongoose.model("setting", SettingSchema);
