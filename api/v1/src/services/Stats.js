@@ -1,5 +1,5 @@
 const Stat = require("../models/Stats");
-const Course = require("../models/Course");
+const Course = require("../models/Courses");
 
 const list = () => {
     return Stat.find({});
