@@ -9,20 +9,20 @@ const incrementView = () => {
     return Stat.findOneAndUpdate({}, {$inc: {viewCount: 1}});
 };
 
-const getViewCount = () => {
+const viewCount = () => {
     return Stat.findOne({}).then(stat => {
         return stat.viewCount;
     });
 };
 
-const getCourseCount = () => {
+const courseCount = () => {
     return Course.count({});
 };
 
-const getAllCount = () => {
-    const viewCount = getViewCount();
-    const courseCount = getCourseCount();
-    return Promise.all([viewCount, courseCount]).then(values => {
+const allCount = () => {
+    const _viewCount = viewCount();
+    const _courseCount = courseCount();
+    return Promise.all([_viewCount, _courseCount]).then(values => {
         return {
             viewCount: values[0],
             courseCount: values[1]
@@ -33,7 +33,7 @@ const getAllCount = () => {
 module.exports = {
     list,
     incrementView,
-    getViewCount,
-    getCourseCount,
-    getAllCount
+    viewCount,
+    courseCount,
+    allCount
 };
