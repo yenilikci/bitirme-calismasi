@@ -28,7 +28,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/api/.env" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/v1/src/services" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/v1/src/models" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -37,8 +37,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/api/v1/src/services" />
       <recent name="$PROJECT_DIR$/api/v1/src/models" />
+      <recent name="$PROJECT_DIR$/api/v1/src/services" />
       <recent name="$PROJECT_DIR$/api/v1/src/controllers" />
       <recent name="$PROJECT_DIR$/api/v1/src/api-routes" />
       <recent name="$PROJECT_DIR$/web3-ui/pages/blogs" />
@@ -60,7 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1652915344465</updated>
       <workItem from="1652915347386" duration="34559000" />
-      <workItem from="1653086785479" duration="27897000" />
+      <workItem from="1653086785479" duration="28227000" />
     </task>
     <servers />
   </component>
