@@ -7,7 +7,7 @@ const validate = require("../middlewares/validate");
 const authenticate = require("../middlewares/authenticate");
 const router = express.Router();
 
-router.route("/").get(index);
+router.route("/").get(authenticate, index);
 router
     .route("/")
     .patch(authenticate, update);

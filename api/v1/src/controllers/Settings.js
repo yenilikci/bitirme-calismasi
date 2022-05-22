@@ -1,5 +1,5 @@
 const {
-    insert,
+    list,
     modify,
 } = require("../services/Settings");
 const httpStatus = require("http-status");
